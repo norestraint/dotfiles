@@ -1,0 +1,10 @@
+/*
+
+!.gitignore
+!starship.toml
+
+!alacritty/
+!alacritty/*
+
+!nvim/
+!nvim/*/
