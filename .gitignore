@@ -3,6 +3,9 @@
 !.gitignore
 !starship.toml
 
+!kitty/
+!kitty/*
+
 !alacritty/
 !alacritty/*
 
