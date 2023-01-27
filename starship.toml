@@ -76,7 +76,8 @@ format = '[  ]($style)'
 
 [directory]
 format = "at [$path ]($style)"
-truncation_length = 3
+truncation_length = 1
+truncation_symbol = '…/'
 read_only = " "
 
 
