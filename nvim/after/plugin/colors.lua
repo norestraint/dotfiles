@@ -7,3 +7,6 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+
+-- This needs to be here because it needs to happen after the setting for the theme.
+vim.cmd "highlight SignColumn ctermbg=NONE guibg=NONE"
