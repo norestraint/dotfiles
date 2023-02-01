@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
         end
     })
 
+    use 'gruvbox-community/gruvbox'
+
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
