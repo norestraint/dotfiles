@@ -1,6 +1,8 @@
+local custom_theme = require'lualine.themes.tokyonight'
+
 require('lualine').setup {
     options = {
-        theme = 'gruvbox-material',
+        theme = custom_theme,
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
     },
