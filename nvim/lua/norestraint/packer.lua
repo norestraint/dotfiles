@@ -13,15 +13,10 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
-
-    use 'gruvbox-community/gruvbox'
+    use 'theprimeagen/harpoon'
+    use 'nvim-treesitter/playground'
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -30,11 +25,6 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
-
-    use 'theprimeagen/harpoon'
-    use 'nvim-treesitter/playground'
-    use 'mbbill/undotree'
-    use 'tpope/vim-fugitive'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -58,10 +48,15 @@ return require('packer').startup(function(use)
         }
     }
 
+    use 'raimondi/delimitmate' -- For quotes and brackets
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    use 'raimondi/delimitmate' -- For quotes and brackets
+    use 'folke/tokyonight.nvim'
+    use 'gruvbox-community/gruvbox'
+    use 'rose-pine/neovim'
+
 end)
