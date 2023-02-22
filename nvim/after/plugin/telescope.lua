@@ -11,5 +11,22 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 
 -- Project search
 vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+    builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
+
+require('telescope').setup {
+    pickers = {
+        live_grep = {
+            theme = "dropdown",
+        },
+        grep_string = {
+            theme = "dropdown",
+        },
+        lsp_implementations = {
+            theme = "dropdown",
+        },
+        lsp_references = {
+            theme = "dropdown",
+        },
+    }
+}
