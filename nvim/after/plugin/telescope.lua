@@ -15,18 +15,7 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 
 require('telescope').setup {
-    pickers = {
-        live_grep = {
-            theme = "dropdown",
-        },
-        grep_string = {
-            theme = "dropdown",
-        },
-        lsp_implementations = {
-            theme = "dropdown",
-        },
-        lsp_references = {
-            theme = "dropdown",
-        },
-    }
+    defaults = {
+        theme = "dropdown",
+    },
 }
