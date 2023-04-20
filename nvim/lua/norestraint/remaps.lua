@@ -12,3 +12,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Keep search terms in the middle of the screen
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "nzzzv")
+
+vim.keymap.set("n", "<leader>w", ":w<cr>")

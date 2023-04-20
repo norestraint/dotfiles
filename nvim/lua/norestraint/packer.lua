@@ -55,8 +55,10 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- Themes
     use 'folke/tokyonight.nvim'
     use 'gruvbox-community/gruvbox'
     use 'rose-pine/neovim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
 end)
