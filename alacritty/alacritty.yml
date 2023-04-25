@@ -1,6 +1,7 @@
 import:
-# - ~/.config/alacritty/themes/tokyonight-night.yml 
-  - ~/.config/alacritty/themes/catppuccin/catppuccin-mocha.yml
+  - ~/workspace/dotfiles/alacritty/themes/catppuccin/catppuccin-mocha.yml
+# - ./fonts/terminess.yml
+  - ~/workspace/dotfiles/alacritty/fonts/3270.yml
 env:
   TERM: xterm-256color
 
@@ -20,19 +21,4 @@ cursor:
   unfocused_hollow: true
 
   blink_timeout: 0
-
-font:
-  normal:
-    family: TerminessTTF Nerd Font
-    style: Regular
-
-  bold:
-    family: TerminessTTF Nerd Font 
-    style: Bold
-
-  italic:
-    family: TerminessTTF Nerd Font  
-    style: Italic
-
-  size: 15.0
 
