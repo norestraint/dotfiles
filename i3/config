@@ -228,3 +228,4 @@ bindsym Mod4+r mode "resize"
 
 exec_always --no-startup-id "feh --bg-scale /home/norestraint/Pictures/wallpapers/spooky_spill.jpg"
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id "picom &"
