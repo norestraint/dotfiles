@@ -164,8 +164,13 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "folke/trouble.nvim", cmd = "TroubleToggle" },
-  { "catppuccin/nvim",    as = "catppuccin" }
+  { "folke/trouble.nvim",       cmd = "TroubleToggle" },
+  { "catppuccin/nvim",          as = "catppuccin" },
+  { 'dart-lang/dart-vim-plugin' },
+  { 'thosakwe/vim-flutter' },
+  { 'natebosch/vim-lsc' },
+  { 'natebosch/vim-lsc-dart' }
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
