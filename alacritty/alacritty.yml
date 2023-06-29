@@ -1,12 +1,11 @@
-import:
-  - ~/workspace/dotfiles/alacritty/themes/catppuccin/catppuccin-mocha.yml
-# - ~/workspace/dotfiles/alacritty/fonts/terminess.yml
-  - ~/workspace/dotfiles/alacritty/fonts/3270.yml
 env:
   TERM: xterm-256color
 
-window:
+import:
+  - ~/workspace/dotfiles/alacritty/themes/catpuccin/catppuccin-mocha.yml
+  - ~/workspace/dotfiles/alacritty/fonts/3270.yml
 
+window:
   padding:
     x: 10
     y: 10
