@@ -165,7 +165,11 @@ lvim.builtin.treesitter.highlight.enable = true
 -- Additional Plugins
 lvim.plugins = {
   { "folke/trouble.nvim",       cmd = "TroubleToggle" },
+
+  -- Themes
   { "catppuccin/nvim",          as = "catppuccin" },
+
+  -- For Flutter stuff(ngl I don't vibe with Flutter at this point in time)
   { 'dart-lang/dart-vim-plugin' },
   { 'thosakwe/vim-flutter' },
   { 'natebosch/vim-lsc' },
