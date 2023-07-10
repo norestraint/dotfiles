@@ -6,6 +6,7 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+-- ColorMyPencils("catppuccin-mocha")
 ColorMyPencils("catppuccin-mocha")
 
 -- This needs to be here because it needs to happen after the setting for the theme.
