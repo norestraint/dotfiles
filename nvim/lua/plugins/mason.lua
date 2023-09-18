@@ -5,7 +5,7 @@ return {
   opts = {
     ensure_installed = {
       "gopls",
-      "shfmt",
+      "rust-analyzer",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
