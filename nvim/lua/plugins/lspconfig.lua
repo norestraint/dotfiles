@@ -41,8 +41,8 @@ return {
         -- LSP Server Settings
         ---@type lspconfig.options
         servers = {
-           -- gopls = {},
-           rust_analyzer = {}
+            -- gopls = {},
+            rust_analyzer = {}
         },
 
         setup = {
@@ -59,34 +59,6 @@ return {
     config = function(_, opts)
         lspconfig = require "lspconfig"
         util = require "lspconfig/util"
-
-        lspconfig.gopls.setup({
-            cmd = {"gopls", "serve"},
-            filetypes = {"go", "gomod", "gowork", "gotmpl"},
-            root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-            settings = {
-                gopls = {
-                    completeUnimported = true,
-                    usePlaceholders = true,
-                    analyses = {
-                        unusedparams = true,
-                    },
-                    staticcheck = true,
-                },
-            },
-        })
-
-        lspconfig.rust_analyzer.setup({
-            filetypes = {"rust"},
-            root_dir = util.root_pattern("Cargo.toml"),
-            settings = {
-                ['rust-analyzer'] = {
-                    cargo = {
-                        allFeatures = true,
-                    },
-                },
-            },
-        })
 
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -124,6 +96,11 @@ return {
                 function()
                     vim.lsp.buf.format { async = true }
                 end, opts)
+
+                -- Diagnostics
+                vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+                vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+                vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
             end,})
         end
     }
