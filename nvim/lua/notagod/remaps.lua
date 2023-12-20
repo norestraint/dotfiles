@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader><Esc>", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>w", ":w<cr>")
-vim.keymap.set("n", "<leader>q", ":q!<cr>")
+vim.keymap.set("n", "<leader>ww", ":w<cr>")
+vim.keymap.set("n", "<leader>qq", ":q!<cr>")
 
 -- Move selected text up and down when on visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
