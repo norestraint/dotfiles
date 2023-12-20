@@ -1,10 +1,10 @@
 return {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
-    version = "1.2.1", 
+    version = "1.2.1",
     build = "make install_jsregexp",
-    config = function(_, opts)
-        luasnip = require"luasnip"
+    config = function(_)
+        local luasnip = require"luasnip"
 
         luasnip.config.set_config({
             region_check_events = 'InsertEnter',
