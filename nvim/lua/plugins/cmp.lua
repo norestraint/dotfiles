@@ -10,16 +10,36 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
     },
-    config = function(_, opts)
+    config = function(_)
         local luasnip = require"luasnip"
-        local cmp = require"cmp" 
+        local cmp = require"cmp"
+        local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 
-        vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-        cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
-
-        cmp.setup({
+        local cmp_config = {
             completion = {
                 completeopt = 'menu,menuone,noinsert'
+            },
+            snippet = {
+                expand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
+            sources = {
+                {name = 'path'},
+                {name = 'nvim_lsp', keyword_length = 3},
+                {name = 'buffer', keyword_length = 4},
+                {name = 'luasnip', keyword_length = 2},
+            },
+            window = {
+                documentation = vim.tbl_deep_extend(
+                'force',
+                cmp.config.window.bordered(),
+                {
+                    max_height = 15,
+                    max_width = 60,
+                    min_height = 10,
+                    min_width = 30,
+                })
             },
             formatting = {
                 fields = {'abbr', 'menu', 'kind'},
@@ -35,28 +55,16 @@ return {
                     return item
                 end,
             },
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
-            sources = {
-                {name = 'luasnip', keyword_length = 2},
-                {name = 'path', keyword_length = 3},
-                {name = 'nvim_lsp', keyword_length = 3},
-                {name = 'nvim_lua', keyword_length = 3},
-                {name = 'buffer', keyword_length = 4},
-            },
             mapping = {
                 -- confirm selection
                 ['<CR>'] = cmp.mapping.confirm({select = false}),
                 ['<C-y>'] = cmp.mapping.confirm({select = false}),
 
                 -- navigate items on the list
-                ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
-                ['<Down>'] = cmp.mapping.select_next_item(select_opts),
-                ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
-                ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+                ['<Up>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+                ['<Down>'] = cmp.mapping.select_next_item(cmp_select_opts),
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select_opts),
 
                 -- scroll up and down in the completion documentation
                 ['<C-f>'] = cmp.mapping.scroll_docs(5),
@@ -115,11 +123,10 @@ return {
                     end
                 end, {'i', 's'}),
             }
-        })
+        }
+
+        vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+        cmp.setup(cmp_config)
     end,
 }
--- return {
--- 	version = "1.2.1", 
---   build = "make install_jsregexp",
--- }
 
