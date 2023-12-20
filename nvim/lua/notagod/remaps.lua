@@ -15,3 +15,21 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "nzzzv")
 
+function __lazygit_toggle()
+    local term = require('toggleterm.terminal').Terminal
+    local lazygit = term:new {
+        cmd = "lazygit",
+        hidden = true,
+        direction = "float",
+        float_opts = {
+            border = "none",
+            width = 100000,
+            height = 100000,
+        },
+        on_open = function(_) end,
+        count = 99,
+    }
+    lazygit:toggle()
+end
+
+vim.keymap.set("n", "<leader>gg", "<cmd>lua __lazygit_toggle()<cr>")
