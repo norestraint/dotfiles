@@ -3,8 +3,6 @@ return {
     event = "BufReadPre",
     keys = {
         {'<leader>hs', ':Gitsigns stage_hunk<CR>' },
-        {'<leader>hs', ':Gitsigns stage_hunk<CR>' },
-        {'<leader>hr', ':Gitsigns reset_hunk<CR>'},
         {'<leader>hr', ':Gitsigns reset_hunk<CR>'},
         {'<leader>hS', '<cmd>Gitsigns stage_buffer<CR>'},
         {'<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>'},
