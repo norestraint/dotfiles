@@ -11,20 +11,29 @@ return {
 
     opts = {
         diagnostics = {
-            underline = true,
-            update_in_insert = false,
             virtual_text = {
                 spacing = 4,
                 source = "if_many",
                 prefix = "●",
             },
+            signs = true,
+            update_in_insert = false,
+            underline = true,
             severity_sort = true,
+            float = {
+                focusable = false,
+                style = 'minimal',
+                border = 'rounded',
+                source = 'always',
+                header = '',
+                prefix = '',
+            },
         },
         -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
         -- Be aware that you also will need to properly configure your LSP server to
         -- provide the inlay hints.
         inlay_hints = {
-            enabled = false,
+            enabled = true,
         },
         -- add any global capabilities here
         capabilities = {},
@@ -56,9 +65,9 @@ return {
         },
     },
     ---@param opts PluginLspOpts
-    config = function(_, opts)
-        lspconfig = require "lspconfig"
-        util = require "lspconfig/util"
+    config = function(_)
+        local lspconfig = require "lspconfig"
+        local util = require "lspconfig/util"
 
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -92,7 +101,7 @@ return {
                 vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                vim.keymap.set('n', '<space>f', 
+                vim.keymap.set('n', '<space>FF',
                 function()
                     vim.lsp.buf.format { async = true }
                 end, opts)
@@ -101,6 +110,21 @@ return {
                 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
                 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
                 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-            end,})
-        end
-    }
+
+                local sign = function(params)
+                    vim.fn.sign_define(params.name, {
+                        texthl = params.name,
+                        text = params.text,
+                        numhl = ''
+                    })
+                end
+
+                sign({name = 'DiagnosticSignError', text = '✘'})
+                sign({name = 'DiagnosticSignWarn',  text = '▲'})
+                sign({name = 'DiagnosticSignHint',  text = '⚑'})
+                sign({name = 'DiagnosticSignInfo',  text = ''})
+
+            end
+        })
+    end
+}
