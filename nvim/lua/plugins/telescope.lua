@@ -11,7 +11,7 @@ return {
         {"<leader>gr", "<cmd>Telescope lsp_references<cr>"},
         {"<leader>gd", "<cmd>Telescope lsp_definitions<cr>"},
 
-        {"<leader>gf", "<cmd>Telescope builtin.git_files<cr>"}
+        {"<leader>gf", "<cmd>Telescope git_files<cr>"}
     },
     opts = {
         pickers = {
