@@ -68,8 +68,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -112,12 +114,19 @@
     pkgs.fzf
     pkgs.gnumake42
     pkgs.neovim
+    pkgs.starship
     pkgs.git
     pkgs.lazygit
+    pkgs.ripgrep
+
+    # System tools
+    pkgs.bluez
+    pkgs.pamixer
+    pkgs.eww-wayland
+    pkgs.waybar
 
     # Others
     pkgs.brave
-    pkgs.starship
   ];
 
   fonts.packages = with pkgs; [
