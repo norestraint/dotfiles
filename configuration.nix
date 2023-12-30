@@ -112,7 +112,6 @@
   environment.systemPackages = with pkgs; [
     # CLI tools
     pkgs.fzf
-    pkgs.gnumake42
     pkgs.neovim
     pkgs.starship
     pkgs.git
@@ -120,13 +119,21 @@
     pkgs.ripgrep
 
     # System tools
+    pkgs.nodejs_21
+    pkgs.zig
     pkgs.bluez
     pkgs.pamixer
     pkgs.eww-wayland
     pkgs.waybar
+    pkgs.hyprpaper
 
     # Others
     pkgs.brave
+    pkgs.nerdfonts
+
+    # Core tools
+    pkgs.libgcc
+    pkgs.gnumake42
   ];
 
   fonts.packages = with pkgs; [
