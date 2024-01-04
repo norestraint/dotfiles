@@ -1,13 +1,20 @@
 function ColorMyPencils(color)
-	color = color or "rose-pine"
-	vim.cmd.colorscheme(color)
+    color = color or "rose-pine"
+    vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+
 end
 
--- ColorMyPencils("catppuccin-mocha")
 ColorMyPencils("catppuccin-mocha")
 
--- This needs to be here because it needs to happen after the setting for the theme.
-vim.cmd "highlight SignColumn ctermbg=NONE guibg=NONE"
+vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * hi SignColumn ctermbg=black guibg=black"
+vim.cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
+vim.cmd "let &fcs='eob: '"
+
