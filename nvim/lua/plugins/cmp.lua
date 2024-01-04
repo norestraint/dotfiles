@@ -25,10 +25,10 @@ return {
                 end,
             },
             sources = {
-                {name = 'path'},
+                {name = 'luasnip', keyword_length = 2},
                 {name = 'nvim_lsp', keyword_length = 3},
                 {name = 'buffer', keyword_length = 4},
-                {name = 'luasnip', keyword_length = 2},
+                {name = 'path'},
             },
             window = {
                 documentation = vim.tbl_deep_extend(
@@ -96,6 +96,10 @@ return {
                         fallback()
                     end
                 end, {'i', 's'}),
+            },
+            experimental = {
+                native_menu = false,
+                ghost_text = true,
             }
         }
 
