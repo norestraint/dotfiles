@@ -97,7 +97,7 @@
   users.users.notagod = {
     isNormalUser = true;
     description = "Jorge Luis";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -118,9 +118,15 @@
     pkgs.lazygit
     pkgs.ripgrep
 
-    # System tools
+    # Coding
     pkgs.nodejs_21
     pkgs.zig
+    pkgs.go
+    pkgs.rustup
+    pkgs.gcc9
+    pkgs.lua
+
+    # System tools
     pkgs.bluez
     pkgs.pamixer
     pkgs.eww-wayland
