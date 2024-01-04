@@ -1,15 +1,6 @@
-function ColorMyPencils(color)
-    color = color or "rose-pine"
-    vim.cmd.colorscheme(color)
+vim.cmd.colorscheme("kanagawa")
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-
-end
-
-ColorMyPencils("catppuccin-mocha")
-
+vim.cmd "highlight LineNr ctermbg=none guibg=none"
 vim.cmd "highlight SignColumn ctermbg=none guibg=none"
 vim.cmd "highlight TelescopeBorder ctermbg=none guibg=none"
 vim.cmd "highlight Normal ctermbg=none guibg=none"
@@ -18,3 +9,7 @@ vim.cmd "highlight MsgArea ctermbg=none guibg=none"
 vim.cmd "highlight NvimTreeNormal ctermbg=none guibg=none"
 vim.cmd "let &fcs='eob: '"
 
+
+vim.cmd "hi GitSignsAdd guibg=none"
+vim.cmd "hi GitSignsChange guibg=none"
+vim.cmd "hi GitSignsDelete guibg=none"
