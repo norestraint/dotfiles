@@ -10,11 +10,11 @@ end
 
 ColorMyPencils("catppuccin-mocha")
 
-vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
-vim.cmd "au ColorScheme * hi SignColumn ctermbg=black guibg=black"
-vim.cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
-vim.cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
-vim.cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
-vim.cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
+vim.cmd "highlight SignColumn ctermbg=none guibg=none"
+vim.cmd "highlight TelescopeBorder ctermbg=none guibg=none"
+vim.cmd "highlight Normal ctermbg=none guibg=none"
+vim.cmd "highlight NormalNC ctermbg=none guibg=none"
+vim.cmd "highlight MsgArea ctermbg=none guibg=none"
+vim.cmd "highlight NvimTreeNormal ctermbg=none guibg=none"
 vim.cmd "let &fcs='eob: '"
 
