@@ -125,6 +125,7 @@
     pkgs.rustup
     pkgs.gcc9
     pkgs.lua
+    pkgs.lua-language-server
 
     # System tools
     pkgs.bluez
