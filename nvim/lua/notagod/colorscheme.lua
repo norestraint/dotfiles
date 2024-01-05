@@ -13,3 +13,8 @@ vim.cmd "let &fcs='eob: '"
 vim.cmd "hi GitSignsAdd guibg=none"
 vim.cmd "hi GitSignsChange guibg=none"
 vim.cmd "hi GitSignsDelete guibg=none"
+
+vim.cmd "hi DiagnosticSignWarn guibg=none"
+vim.cmd "hi DiagnosticSignError guibg=none"
+vim.cmd "hi DiagnosticSignHint guibg=none"
+vim.cmd "hi DiagnosticSignInfo guibg=none"
