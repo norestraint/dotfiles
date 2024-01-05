@@ -62,8 +62,8 @@ return {
                 -- navigate items on the list
                 ['<Up>'] = cmp.mapping.select_prev_item(cmp_select_opts),
                 ['<Down>'] = cmp.mapping.select_next_item(cmp_select_opts),
-                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select_opts),
-                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select_opts),
+                ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+                ['<C-j>'] = cmp.mapping.select_next_item(cmp_select_opts),
 
                 -- scroll up and down in the completion documentation
                 ['<C-f>'] = cmp.mapping.scroll_docs(5),
