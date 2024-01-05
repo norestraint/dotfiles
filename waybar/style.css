@@ -12,7 +12,7 @@
 @define-color iris-rp    #C4A7E7;
 
 * {
-    font-family: '3270 Nerd Font SemCond';
+    font-family: '3270 Nerd Font SemCond', 'Liberation Mono', sans-serif;
     font-size: 18px;
     font-weight: 900;
 
