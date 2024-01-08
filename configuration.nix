@@ -122,6 +122,7 @@
     pkgs.nodejs_21
     pkgs.zig
     pkgs.go
+    pkgs.gopls
     pkgs.rustup
     pkgs.gcc9
     pkgs.lua
