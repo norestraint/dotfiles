@@ -104,6 +104,10 @@
     ];
   };
 
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+  '';
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -127,6 +131,7 @@
     pkgs.gcc9
     pkgs.lua
     pkgs.lua-language-server
+    pkgs.flutter
 
     # System tools
     pkgs.bluez
@@ -134,14 +139,18 @@
     pkgs.eww-wayland
     pkgs.waybar
     pkgs.hyprpaper
+    pkgs.pavucontrol
 
     # Others
+    pkgs.vscode
     pkgs.brave
     pkgs.nerdfonts
 
     # Core tools
     pkgs.libgcc
     pkgs.gnumake42
+    pkgs.cmake
+    pkgs.android-tools
   ];
 
   fonts.packages = with pkgs; [
