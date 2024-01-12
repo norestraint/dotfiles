@@ -93,16 +93,16 @@
             "spacing": 0
         },
         "clock": {
-            // "timezone": "America/New_York",
+            // "timezone": "America/Sao_Paulo",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "format-alt": "{:%Y-%m-%d}"
+            "format-alt": "{:%d-%m-%Y}"
         },
         "cpu": {
-            "format": "{usage}%  ",
+            "format": "{usage}% CPU",
             "tooltip": false
         },
         "memory": {
-            "format": "{}%  "
+            "format": "{}% RAM"
         },
         "temperature": {
             // "thermal-zone": 2,
@@ -121,16 +121,13 @@
             "states": {
                 "good": 95,
                 "warning": 30,
-                "critical": 15
+                "critical": 10
             },
             "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% ",
-            "format-plugged": "{capacity}% ",
+            "format-charging": "{capacity}%  ",
             "format-alt": "{time} {icon} ",
-            // "format-good": "", // An empty format will hide the module
-            // "format-full": "",
             "format": "{capacity}% {icon} ",
-		    "format-icons": ["", "", "", "", ""],
+		    "format-icons": [" ", " ", " ", " ", " "],
         },
         "network": {
             "max-length": 12,
