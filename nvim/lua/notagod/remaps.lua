@@ -15,6 +15,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "nzzzv")
 
+vim.keymap.set("i", "\"", "\"\"<Left>")
+vim.keymap.set("i", "'", "''<Left>")
+vim.keymap.set("i", "(", "()<Left>")
+vim.keymap.set("i", "[", "[]<Left>")
+vim.keymap.set("i", "{", "{}<Left>")
+
 function __lazygit_toggle()
     local term = require('toggleterm.terminal').Terminal
     local lazygit = term:new {
