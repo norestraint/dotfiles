@@ -92,7 +92,7 @@ window#waybar.hidden {
 
 #workspaces button.active {
     color: @surface-rp;
-    background-color: @rose-rp;
+    background-color: @iris-rp;
 }
 
 #workspaces button.active:hover {
@@ -112,6 +112,14 @@ window#waybar.hidden {
     color: @love-rp;
 }
 
-#battery {
-    transition: none;
+#battery.good {
+    color: @pine-rp;
+}
+
+#battery.warning {
+    color: @gold-rp;
+}
+
+#battery.critial {
+    color: @love-rp;
 }
