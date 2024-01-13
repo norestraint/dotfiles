@@ -39,3 +39,4 @@ function __lazygit_toggle()
 end
 
 vim.keymap.set("n", "<leader>gg", "<cmd>lua __lazygit_toggle()<cr>")
+vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<cr>")
