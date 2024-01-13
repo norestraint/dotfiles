@@ -121,6 +121,7 @@
     pkgs.git
     pkgs.lazygit
     pkgs.ripgrep
+    pkgs.exercism
 
     # Coding
     pkgs.nodejs_21
@@ -140,6 +141,7 @@
     pkgs.waybar
     pkgs.hyprpaper
     pkgs.pavucontrol
+    pkgs.rofi-wayland
 
     # Others
     pkgs.vscode
