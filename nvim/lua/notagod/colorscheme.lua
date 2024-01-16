@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("tokyonight-night")
 
 vim.cmd "highlight LineNr ctermbg=none guibg=none"
 vim.cmd "highlight SignColumn ctermbg=none guibg=none"
