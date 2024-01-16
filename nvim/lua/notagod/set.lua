@@ -34,6 +34,8 @@ vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 
+vim.opt.cursorline = true
+
 vim.g.mapleader = " "
 
 vim.cmd("set noshowmode")
