@@ -120,6 +120,6 @@ window#waybar.hidden {
     color: @gold-rp;
 }
 
-#battery.critial {
+#battery.critical {
     color: @love-rp;
 }
