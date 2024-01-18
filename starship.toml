@@ -16,7 +16,7 @@ success_symbol = "[ ](bold #A6E3A1)"
 error_symbol = "[ ](bold #F38BA8)"
 
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
