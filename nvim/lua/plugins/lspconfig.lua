@@ -112,6 +112,23 @@ return {
 
             lspconfig.gopls.setup{}
 
+            lspconfig.rust_analyzer.setup {
+                settings = {
+                    ['rust_analyzer'] = {
+                        check = {
+                            command = 'clippy',
+                        },
+                        diagnostics = {
+                            enable = true,
+                        }
+                    }
+                }
+            }
+
+            lspconfig.tsserver.setup{
+                cmd = { "tsserver", "--stdio" }
+            }
+
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
             vim.api.nvim_create_autocmd('LspAttach', {
