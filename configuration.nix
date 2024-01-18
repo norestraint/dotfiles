@@ -129,10 +129,12 @@
     pkgs.go
     pkgs.gopls
     pkgs.rustup
+    pkgs.rust-analyzer
     pkgs.gcc9
     pkgs.lua
     pkgs.lua-language-server
     pkgs.flutter
+    pkgs.typescript
 
     # System tools
     pkgs.bluez
@@ -142,6 +144,7 @@
     pkgs.hyprpaper
     pkgs.pavucontrol
     pkgs.rofi-wayland
+    pkgs.watchman
 
     # Others
     pkgs.vscode
@@ -173,7 +176,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8081 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
