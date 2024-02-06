@@ -39,3 +39,11 @@ vim.opt.cursorline = true
 vim.g.mapleader = " "
 
 vim.cmd("set noshowmode")
+
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
+vim.api.nvim_set_option('updatetime', 300)
+
+vim.cmd([[
+    autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
+]])

@@ -51,9 +51,6 @@ return {
         -- LSP Server Settings
         ---@type lspconfig.options
         servers = {
-            -- gopls = {},
-            rust_analyzer = {},
-            lua_ls = {}
         },
 
         setup = {
@@ -78,56 +75,6 @@ return {
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
             vim.keymap.set('n', '<space>lq', vim.diagnostic.setloclist)
-
-            lspconfig.lua_ls.setup {
-                on_init = function(client)
-                    local path = client.workspace_folders[1].name
-                    if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                        client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-                            Lua = {
-                                runtime = {
-                                    -- Tell the language server which version of Lua you're using
-                                    -- (most likely LuaJIT in the case of Neovim)
-                                    version = 'LuaJIT'
-                                },
-                                -- Make the server aware of Neovim runtime files
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = {
-                                        vim.env.VIMRUNTIME
-                                        -- "${3rd}/luv/library"
-                                        -- "${3rd}/busted/library",
-                                    }
-                                    -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                                    -- library = vim.api.nvim_get_runtime_file("", true)
-                                }
-                            }
-                        })
-
-                        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                    end
-                    return true
-                end
-            }
-
-            lspconfig.gopls.setup{}
-
-            lspconfig.rust_analyzer.setup {
-                settings = {
-                    ['rust_analyzer'] = {
-                        check = {
-                            command = 'clippy',
-                        },
-                        diagnostics = {
-                            enable = true,
-                        }
-                    }
-                }
-            }
-
-            lspconfig.tsserver.setup{
-                cmd = { "tsserver", "--stdio" }
-            }
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
