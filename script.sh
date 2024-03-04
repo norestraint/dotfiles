@@ -49,10 +49,13 @@ if [ ! -d dotfiles ]; then
     git clone https://github.com/norestraint/dotfiles.git
     ln -s $HOME/dotfiles/* $HOME/.config/
     cp dotfiles/fonts/Terminess/* /usr/local/share/fonts/ && fc-cache -fv
+    cp dotfiles/fonts/3270/* /usr/local/share/fonts/ && fc-cache -fv
 fi
 
 if ! command -v starship &> /dev/null; then
-    echo "starship prompt not found."
+    echo "Starship prompt not found, installing it..."
+    curl -sS https://starship.rs/install.sh | sh
+    echo "eval \"$(starship init bash)\"" >> $HOME/.bashrc
 fi
 
 if ! command -v brave-browser &> /dev/null; then
@@ -63,7 +66,8 @@ if ! command -v brave-browser &> /dev/null; then
 fi
 
 if ! command -v nvm &> /dev/null; then
-    echo "Run curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash to install nvm."
+    echo "NVM not found, installing it..."
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 fi
 
 if ! command -v fzf &> /dev/null; then
@@ -83,5 +87,6 @@ if ! command -v watchmen &> /dev/null; then
 fi
 
 if ! command -v cargo &> /dev/null; then
-    echo "Run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh to install cargo."
+    echo "Cargo not found, installing it..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
