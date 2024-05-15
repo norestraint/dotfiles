@@ -8,11 +8,12 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "catppuccin-mocha"
-lvim.transparent_window = true
+lvim.colorscheme = "kanagawa"
+-- lvim.transparent_window = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 --
@@ -22,6 +23,12 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<leader>w"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>t"] = ":ToggleTerm<cr>"
 lvim.keys.normal_mode["<leader>T"] = ":TroubleToggle<cr>"
+
+lvim.keys.insert_mode["<C-h>"] = "<Left>"
+lvim.keys.insert_mode["<C-j>"] = "<Down>"
+lvim.keys.insert_mode["<C-k>"] = "<Up>"
+lvim.keys.insert_mode["<C-l>"] = "<Right>"
+
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -70,6 +77,17 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
+lvim.builtin.cmp.experimental.ghost_text = true
+
+local cmp = require("cmp")
+
+cmp.setup({
+  mapping = {
+    ["<Tab>"] = nil,
+    ["<CR>"] = nil,
+  },
+})
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -164,10 +182,17 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "folke/trouble.nvim",       cmd = "TroubleToggle" },
+  { "folke/trouble.nvim", cmd = "TroubleToggle" },
 
   -- Themes
-  { "catppuccin/nvim",          as = "catppuccin" },
+  { "catppuccin/nvim",    as = "catppuccin" },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  { "rebelot/kanagawa.nvim",    as = "kanagawa" },
 
   -- For Flutter stuff(ngl I don't vibe with Flutter at this point in time)
   { 'dart-lang/dart-vim-plugin' },

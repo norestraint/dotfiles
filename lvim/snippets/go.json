@@ -1,0 +1,11 @@
+{
+  "if-err": {
+    "prefix": "ife",
+    "body": [
+      "if err != nil {",
+      "  $1",
+      "}"
+    ],
+    "description": "Check for errors."
+  }
+}
