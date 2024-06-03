@@ -1,7 +1,5 @@
 #!/bin/bash
 
-editor="lv"
-
 ignored_folders=(
   ".cache" 
   "target" 
@@ -10,6 +8,9 @@ ignored_folders=(
   ".nvm"
   ".local"
   ".git"
+  "node_modules"
+  "go"
+  ".rustup"
 )
 
 go_to_folder="find $HOME -type d \( "
@@ -32,8 +33,8 @@ alias lv="$HOME/.local/bin/lvim"
 alias gd='dir=$(eval "$go_to_folder"); if [[ -n "$dir" ]]; then cd "$dir"; fi'
 
 # Load folder into editor
-alias ld='dir=$(eval "$go_to_folder"); if [[ -n "$dir" ]]; then $editor "$dir"; fi'
+alias ld='dir=$(eval "$go_to_folder"); if [[ -n "$dir" ]]; then cd "$dir" && lv . ; fi'
 
 # Load file into editor
-alias lf='file=$(eval "$go_to_file"); if [[ -n "$file" ]]; then $editor "$file"; fi'
+alias lf='file=$(eval "$go_to_file"); if [[ -n "$file" ]]; then lv "$file"; fi'
 

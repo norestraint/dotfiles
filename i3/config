@@ -55,10 +55,13 @@ set $right l
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec alacritty
+bindsym Mod4+Return exec wezterm
 
 # kill focused window
 bindsym Mod4+Shift+q kill
+
+# lock screen
+bindsym Mod1+Shift+l exec --no-startup-id "i3lock -c 000000"
 
 # start dmenu (a program launcher)
 bindsym Mod4+p exec --no-startup-id "rofi -show drun"
@@ -233,6 +236,6 @@ bindsym Mod4+r mode "resize"
 #######################################################################
 # exec i3-config-wizard
 
-exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/looking_up.jpg"
+exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/dragon-ball-goku-gohan.png"
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
-exec_always --no-startup-id "killall -q && picom --experimental-backend &"
+# exec_always --no-startup-id "killall -q && picom --experimental-backend &"
