@@ -12,8 +12,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "kanagawa"
--- lvim.transparent_window = true
+lvim.transparent_window = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 --
@@ -80,14 +79,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 lvim.builtin.cmp.experimental.ghost_text = true
 
-local cmp = require("cmp")
-
-cmp.setup({
-  mapping = {
-    ["<Tab>"] = nil,
-    ["<CR>"] = nil,
-  },
-})
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -185,14 +176,14 @@ lvim.plugins = {
   { "folke/trouble.nvim", cmd = "TroubleToggle" },
 
   -- Themes
-  { "catppuccin/nvim",    as = "catppuccin" },
+  { "catppuccin/nvim" },
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
   },
-  { "rebelot/kanagawa.nvim",    as = "kanagawa" },
+  { "rebelot/kanagawa.nvim" },
 
   -- For Flutter stuff(ngl I don't vibe with Flutter at this point in time)
   { 'dart-lang/dart-vim-plugin' },
