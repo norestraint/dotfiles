@@ -16,7 +16,11 @@ font pango:monospace 8
 gaps inner 4
 gaps outer 2
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 4
+
+client.focused #F9E2AF #000000 #CDD6F4 #F9E2AF #F9E2AF
+client.focused_inactive #585B70 #000000 #CDD6F4 #585B70 #585B70
+client.urgent #F38BA8 #000000 #CDD6F4 #F38BA8 #F38BA8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -186,7 +190,7 @@ workspace $ws7 output $monitor $laptop
 workspace $ws8 output $laptop 
 workspace $ws9 output $laptop 
 workspace $ws0 output $laptop 
- 
+
 # reload the configuration file
 bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -196,27 +200,27 @@ bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 5 px or 5 ppt
-        bindsym $down       resize grow height 5 px or 5 ppt
-        bindsym $up         resize shrink height 5 px or 5 ppt
-        bindsym $right      resize grow width 5 px or 5 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+  bindsym $left       resize shrink width 5 px or 5 ppt
+    bindsym $down       resize grow height 5 px or 5 ppt
+    bindsym $up         resize shrink height 5 px or 5 ppt
+    bindsym $right      resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 5 px or 5 ppt
-        bindsym Down        resize grow height 5 px or 5 ppt
-        bindsym Up          resize shrink height 5 px or 5 ppt
-        bindsym Right       resize grow width 5 px or 5 ppt
+# same bindings, but for the arrow keys
+    bindsym Left        resize shrink width 5 px or 5 ppt
+    bindsym Down        resize grow height 5 px or 5 ppt
+    bindsym Up          resize shrink height 5 px or 5 ppt
+    bindsym Right       resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape or Mod4+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Mod4+r mode "default"
+# back to normal: Enter or Escape or Mod4+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Mod4+r mode "default"
 }
 
 bindsym Mod4+r mode "resize"
@@ -236,6 +240,6 @@ bindsym Mod4+r mode "resize"
 #######################################################################
 # exec i3-config-wizard
 
-exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/dragon-ball-goku-gohan.png"
+exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/fsociety.png"
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
 # exec_always --no-startup-id "killall -q && picom --experimental-backend &"
