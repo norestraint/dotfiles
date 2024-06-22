@@ -22,6 +22,9 @@ client.focused #F9E2AF #000000 #CDD6F4 #F9E2AF #F9E2AF
 client.focused_inactive #585B70 #000000 #CDD6F4 #585B70 #585B70
 client.urgent #F38BA8 #000000 #CDD6F4 #F38BA8 #F38BA8
 
+
+for_window [instance="Godot_Engine"] floating enable
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -68,7 +71,8 @@ bindsym Mod4+Shift+q kill
 bindsym Mod1+Shift+l exec --no-startup-id "i3lock -c 000000"
 
 # start dmenu (a program launcher)
-bindsym Mod4+p exec --no-startup-id "rofi -show drun"
+bindsym Mod4+p exec --no-startup-id "rofi -show run"
+bindsym Mod4+Shift+p exec --no-startup-id "flameshot gui"
 bindsym Mod4+Tab exec --no-startup-id "rofi -show window"
 # A more modern dmenu replacement is rofi:
 # bindsym Mod4+d exec "rofi -modi drun,run -show drun"
@@ -242,4 +246,4 @@ bindsym Mod4+r mode "resize"
 
 exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/fsociety.png"
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
-# exec_always --no-startup-id "killall -q && picom --experimental-backend &"
+exec_always --no-startup-id "killall -q && picom --experimental-backend &"
