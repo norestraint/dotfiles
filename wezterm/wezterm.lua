@@ -1,9 +1,8 @@
 local wezterm = require 'wezterm'
 return {
-  color_scheme = 'Catppuccin Mocha',
+  color_scheme = 'tokyonight_night',
   enable_tab_bar = false,
   font_size = 12.0,
-  -- font = wezterm.font('3270SemiCondensed Nerd Font'),
 
   default_prog = { 'bash' },
   cursor_blink_rate = 800,
