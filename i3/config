@@ -22,6 +22,7 @@ client.focused #F9E2AF #000000 #CDD6F4 #F9E2AF #F9E2AF
 client.focused_inactive #585B70 #000000 #CDD6F4 #585B70 #585B70
 client.urgent #F38BA8 #000000 #CDD6F4 #F38BA8 #F38BA8
 
+mouse_warping none
 
 for_window [instance="Godot_Engine"] floating enable
 
@@ -68,11 +69,12 @@ bindsym Mod4+Return exec wezterm
 bindsym Mod4+Shift+q kill
 
 # lock screen
-bindsym Mod1+Shift+l exec --no-startup-id "i3lock -c 000000"
+bindsym Mod1+Shift+l exec --no-startup-id "i3lock --color=000000 -e -u"
 
 # start dmenu (a program launcher)
-bindsym Mod4+p exec --no-startup-id "rofi -show run"
-bindsym Mod4+Shift+p exec --no-startup-id "flameshot gui"
+bindsym Mod4+p exec --no-startup-id "rofi -show drun"
+bindsym Mod4+Shift+p exec --no-startup-id "rofi -show run"
+bindsym Mod4+Mod1+p exec --no-startup-id "flameshot gui"
 bindsym Mod4+Tab exec --no-startup-id "rofi -show window"
 # A more modern dmenu replacement is rofi:
 # bindsym Mod4+d exec "rofi -modi drun,run -show drun"
@@ -244,6 +246,6 @@ bindsym Mod4+r mode "resize"
 #######################################################################
 # exec i3-config-wizard
 
-exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/fsociety.png"
+exec_always --no-startup-id "xrandr --output HDMI-1 --right-of eDP-1"
+exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/looking_up.jpg"
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
-exec_always --no-startup-id "killall -q && picom --experimental-backend &"
