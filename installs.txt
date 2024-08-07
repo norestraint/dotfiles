@@ -1,0 +1,16 @@
+sudo apt install curl
+sudo apt install brave-browser
+sudo apt install i3
+sudo apt install polybar 
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+git config --global user.name "Jorge Luis"
+git config --global user.email "norestraint@protonmail.com"
+git config --global core.editor nvim
+git config --global init.defaultBranch main
+sudo apt install fzf
+sudo apt install build-essential
+sudo apt install rofi
+sudo apt install feh
+sudo apt install imagemagick
+sudo apt install scrot

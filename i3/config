@@ -153,7 +153,8 @@ set $ws9 "9"
 set $ws0 "0"
 
 set $laptop "eDP-1"
-set $monitor "HDMI-1"
+set $middle_monitor "HDMI-1"
+set $right_monitor "DVI-I-2-1"
 
 # switch to workspace
 bindsym Mod4+1 workspace number $ws1
@@ -179,13 +180,13 @@ bindsym Mod4+Shift+8 move container to workspace number $ws8
 bindsym Mod4+Shift+9 move container to workspace number $ws9
 bindsym Mod4+Shift+0 move container to workspace number $ws0
 
-workspace $ws1 output $monitor $laptop 
-workspace $ws2 output $monitor $laptop 
-workspace $ws3 output $monitor $laptop 
-workspace $ws4 output $monitor $laptop 
-workspace $ws5 output $monitor $laptop 
-workspace $ws6 output $monitor $laptop 
-workspace $ws7 output $monitor $laptop 
+workspace $ws1 output $middle_monitor $laptop 
+workspace $ws2 output $middle_monitor $laptop 
+workspace $ws3 output $middle_monitor $laptop 
+workspace $ws4 output $middle_monitor $laptop 
+workspace $ws5 output $right_monitor $laptop 
+workspace $ws6 output $right_monitor $laptop 
+workspace $ws7 output $right_monitor $laptop 
 # workspace $ws1 output $laptop 
 # workspace $ws2 output $laptop 
 # workspace $ws3 output $laptop 
@@ -248,4 +249,4 @@ bindsym Mod4+r mode "resize"
 
 exec_always --no-startup-id "xrandr --output HDMI-1 --right-of eDP-1"
 exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/looking_up.jpg"
-exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id "$HOME/.config/polybar/launch_polybar.sh"
