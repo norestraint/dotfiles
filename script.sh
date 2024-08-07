@@ -65,10 +65,10 @@ if ! command -v brave-browser &> /dev/null; then
     sudo nala install -y brave-browser
 fi
 
-if ! command -v nvm &> /dev/null; then
-    echo "NVM not found, installing it..."
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-fi
+#if ! command -v nvm &> /dev/null; then
+#    echo "NVM not found, installing it..."
+#    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+#fi
 
 if ! command -v fzf &> /dev/null; then
     sudo nala update
