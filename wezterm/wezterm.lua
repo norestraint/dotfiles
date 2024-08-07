@@ -4,7 +4,7 @@ return {
   enable_tab_bar = false,
   font_size = 12.0,
 
-  default_prog = { 'bash' },
+  default_prog = { 'zsh' },
   cursor_blink_rate = 800,
   window_background_opacity = 1.0,
   window_decorations = 'RESIZE',
