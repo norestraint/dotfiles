@@ -28,6 +28,7 @@ go_to_folder+="\) | fzf"
 go_to_file+="\) | fzf"
 
 alias lv="$HOME/.local/bin/lvim"
+alias wezterm='flatpak run org.wezfurlong.wezterm'
 
 # Go to folder
 alias gd='dir=$(eval "$go_to_folder"); if [[ -n "$dir" ]]; then cd "$dir"; fi'
@@ -38,3 +39,8 @@ alias ld='dir=$(eval "$go_to_folder"); if [[ -n "$dir" ]]; then cd "$dir" && lv 
 # Load file into editor
 alias lf='file=$(eval "$go_to_file"); if [[ -n "$file" ]]; then lv "$file"; fi'
 
+# Enables history on the Elixir's iex environment
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Needed for solving Elixir's iex error https://erlangforums.com/t/sh-1-exec-tty-sl-not-found/2848/2
+export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
