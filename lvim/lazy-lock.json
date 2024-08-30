@@ -47,5 +47,8 @@
   "vim-illuminate": { "branch": "master", "commit": "e522e0dd742a83506db0a72e1ced68c9c130f185" },
   "vim-lsc": { "branch": "master", "commit": "14203f07add90e273020f626e6d1a79b9fd694c4" },
   "vim-lsc-dart": { "branch": "master", "commit": "fac8f100fad5153aae8c932a033ea3a92cf140f2" },
+  "vim-test": { "branch": "master", "commit": "75b64f23c923d34b56e47846a026210feb57146a" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
+  "vimux": { "branch": "master", "commit": "c4ffa0b992798f3362b27642088dccb251aaef1e" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
