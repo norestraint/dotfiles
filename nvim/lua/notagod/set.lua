@@ -47,3 +47,5 @@ vim.api.nvim_set_option('updatetime', 300)
 vim.cmd([[
     autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
 ]])
+
+vim.cmd("set guicursor=")
