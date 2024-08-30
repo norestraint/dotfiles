@@ -53,7 +53,7 @@ compinit -C
 zinit cdreplay -q
 
 # Initialize OhMyPosh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/minimal.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/default.toml)"
 
 # Keymaps
 bindkey -e # Chech if there is a vim mode for this
@@ -77,7 +77,17 @@ setopt hist_find_no_dups
 alias ls='ls --color'
 
 alias lv="$HOME/.local/bin/lvim"
+
+alias lf='lv $(find $HOME -type f | fzf -m --no-ignore-case --preview="bat --color=always {}" --tmux)'
+
+alias ld='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux) && lv .'
+alias gd='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux)'
+
+alias rb='zathura $(find $HOME/Documents/books | fzf --tmux) &'
+
 alias wezterm='flatpak run org.wezfurlong.wezterm'
+
+alias c='clear'
 
 # Set up fzf integrations
 eval "$(fzf --zsh)"
@@ -87,6 +97,9 @@ eval "enable-fzf-tab"
 
 # Enable zoxide for smarter cd
 eval "$(zoxide init --cmd cd zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 
 
@@ -98,3 +111,6 @@ export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
 
 # Used when theres a need to profile the zsh init logs
 # zprof
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
