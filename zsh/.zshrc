@@ -53,7 +53,7 @@ compinit -C
 zinit cdreplay -q
 
 # Initialize OhMyPosh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/default.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/custom.toml)"
 
 # Keymaps
 bindkey -e # Chech if there is a vim mode for this
