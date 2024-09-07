@@ -114,3 +114,5 @@ export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+. "$HOME/.asdf/asdf.sh"
