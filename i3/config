@@ -250,5 +250,5 @@ bindsym Mod4+r mode "resize"
 # exec i3-config-wizard
 
 exec_always --no-startup-id "xrandr --output HDMI-1 --right-of eDP-1"
-exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/looking_up.jpg"
+exec_always --no-startup-id "feh --bg-scale $HOME/Pictures/wallpapers/dragon-ball-goku-gohan.png"
 exec_always --no-startup-id "$HOME/.config/polybar/launch_polybar.sh"
