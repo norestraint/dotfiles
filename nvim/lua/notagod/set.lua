@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.opt.guicursor = "n:,v-ve:block-Cursor"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -48,4 +49,4 @@ vim.cmd([[
     autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
 ]])
 
-vim.cmd("set guicursor=")
+
