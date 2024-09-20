@@ -1,4 +1,1 @@
-require("norestraint.remaps")
-require("norestraint.set")
-
-
+require("norestraint.core")
