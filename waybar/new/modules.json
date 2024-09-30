@@ -1,0 +1,82 @@
+{
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": false,
+    "format": "{name}"
+  },
+
+  "custom/appmenu": {
+    "format": "",
+    "tooltip-format": "Left: wofi\nRight: waypaper",
+    "on-click": "wofi -show drun -replace",
+    "on-click-right": "waypaper",
+    "tooltip": true
+  },
+
+  "custom/exit": {
+    "format": " ",
+    "tooltip-format": "Left: wlogout\nRight: setting app",
+    "on-click": "wlogout -b 4",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage",
+    "on-click-middle": "ags -t sidebar",
+    "tooltip": true
+  },
+
+  "clock": {
+    "format": "{:%I:%M %a}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click-right": "gapplication launch org.gnome.Weather",
+    "on-click-middle": "ags -t sidebar",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    }
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty -e btop",
+    "on-click-right": "~/.config/ml4w/settings/ai.sh"
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "tooltip": true,
+    "on-click": "kitty -e btop"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 60
+  },
+
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-muted": " {volume}"
+  },
+
+  "battery": {
+    "full-at": 95,
+    "format": "{capacity}%"
+  }
+}
