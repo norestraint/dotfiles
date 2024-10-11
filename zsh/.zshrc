@@ -1,5 +1,6 @@
 # Used when theres a need to profile the zsh init logs
 # zmodload zsh/zprof
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -43,6 +44,8 @@ zinit snippet OMZP::command-not-found
 # Load completions 
 # autoload -U compinit && compinit
 
+export fpath=(~/.zsh/functions $fpath)
+
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
@@ -53,7 +56,7 @@ compinit -C
 zinit cdreplay -q
 
 # Initialize OhMyPosh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/custom.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
 
 # Keymaps
 bindkey -e # Chech if there is a vim mode for this
@@ -74,19 +77,21 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Aliases
-alias ls='ls --color'
 
-alias lv="$HOME/.local/bin/lvim"
-
+# Load files/directories with neovim.
 alias lf='lv $(find $HOME -type f | fzf -m --no-ignore-case --preview="bat --color=always {}" --tmux)'
-
 alias ld='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux) && lv .'
 alias gd='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux)'
 
+# Load pdfs with zathura.
 alias rb='zathura $(find $HOME/Documents/books | fzf --tmux) &'
 
-alias wezterm='flatpak run org.wezfurlong.wezterm'
+# pacman utilities.
+alias pacs='pacman -Ss'
+alias paci='sudo pacman -S'
+alias pacu='sudo pacman -Syu'
 
+# Others.
 alias c='clear'
 
 # Set up fzf integrations
@@ -114,5 +119,8 @@ export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+fpath+=~/bin
 
-. "$HOME/.asdf/asdf.sh"
+. /opt/asdf-vm/asdf.sh
+. /usr/local/bin
+. "$HOME/.cargo/env"
