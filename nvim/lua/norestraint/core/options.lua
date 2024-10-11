@@ -15,19 +15,17 @@ opt.guicursor = "n:hor20,i:ver20-iCursor,v-ve:block-nCursor,a:blinkwait10-blinko
 opt.cursorline = true
 
 -- tabs & indentation
-opt.tabstop = 2 
+opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
-
 -- search settings
 opt.ignorecase = true
-opt.smartcase = true 
-opt.hlsearch = true 
-opt.incsearch = true 
-
+opt.smartcase = true
+opt.hlsearch = true
+opt.incsearch = true
 
 -- appearence
 opt.termguicolors = true
@@ -36,10 +34,10 @@ opt.signcolumn = "yes"
 opt.colorcolumn = "80"
 
 -- backspace
-opt.backspace = "indent,eol,start" 
+opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append("unnamedplus") 
+opt.clipboard:append("unnamedplus")
 
 -- split windows
 opt.splitright = true
