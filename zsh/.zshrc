@@ -55,8 +55,9 @@ compinit -C
 # Used by zinit to replay cashed completions
 zinit cdreplay -q
 
-# Initialize OhMyPosh
-eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
+# Initialize prompt
+# eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
+	eval "$(starship init zsh)"
 
 # Keymaps
 bindkey -e # Chech if there is a vim mode for this
@@ -79,8 +80,8 @@ setopt hist_find_no_dups
 # Aliases
 
 # Load files/directories with neovim.
-alias lf='lv $(find $HOME -type f | fzf -m --no-ignore-case --preview="bat --color=always {}" --tmux)'
-alias ld='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux) && lv .'
+alias lf='nvim $(find $HOME -type f | fzf -m --no-ignore-case --preview="bat --color=always {}" --tmux)'
+alias ld='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux) && nvim .'
 alias gd='cd $(find $HOME -type d | fzf --no-ignore-case -m --tmux)'
 
 # Load pdfs with zathura.
@@ -93,6 +94,8 @@ alias pacu='sudo pacman -Syu'
 
 # Others.
 alias c='clear'
+alias ls='eza --all --icons'
+alias nv='nvim'
 
 # Set up fzf integrations
 eval "$(fzf --zsh)"
@@ -121,6 +124,8 @@ zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 fpath+=~/bin
 
-. /opt/asdf-vm/asdf.sh
 . /usr/local/bin
+. "$HOME/.asdf/asdf.sh"
 . "$HOME/.cargo/env"
+. "$HOME/.asdf/plugins/golang/set-env.zsh"
+export PATH=$HOME/bin:$PATH
