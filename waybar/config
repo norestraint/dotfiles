@@ -21,6 +21,6 @@
         "cpu", 
         "memory", 
         "clock",
-        "custom/exit"
+        "custom/notification"
     ]
 }
