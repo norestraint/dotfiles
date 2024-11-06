@@ -12,7 +12,8 @@
     "modules-left": [
         "battery",
         "network", 
-        "pulseaudio" 
+        "pulseaudio",
+        "backlight"
     ],
     "modules-center": [
         "hyprland/workspaces"

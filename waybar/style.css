@@ -172,3 +172,23 @@ tooltip label {
   margin: 0.5em;
   padding: 0.25em 0.5em;
 }
+
+#backlight-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+#backlight-slider trough {
+  min-height: 0.2em;
+  min-width: 0.5em;
+  border-radius: 1em;
+  background-color: black;
+}
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 1em;
+  background-color: red;
+}
