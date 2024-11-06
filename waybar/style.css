@@ -181,12 +181,14 @@ tooltip label {
   border: none;
   box-shadow: none;
 }
+
 #backlight-slider trough {
   min-height: 0.2em;
   min-width: 0.5em;
   border-radius: 1em;
   background-color: black;
 }
+
 #backlight-slider highlight {
   min-width: 10px;
   border-radius: 1em;
