@@ -129,3 +129,10 @@ fpath+=~/bin
 . "$HOME/.cargo/env"
 . "$HOME/.asdf/plugins/golang/set-env.zsh"
 export PATH=$HOME/bin:$PATH
+
+# bun completions
+[ -s "/home/norestraint/.bun/_bun" ] && source "/home/norestraint/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
