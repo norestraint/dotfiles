@@ -96,6 +96,7 @@ alias pacu='sudo pacman -Syu'
 alias c='clear'
 alias ls='eza --all --icons'
 alias nv='nvim'
+alias elixirls='$HOME/.elixirls/language_server.sh'
 
 # Set up fzf integrations
 eval "$(fzf --zsh)"
@@ -136,3 +137,4 @@ export PATH=$HOME/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
