@@ -11,19 +11,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-	{
-		{ import = "norestraint.plugins" },
-		{ import = "norestraint.plugins.lsp" },
-		{ import = "norestraint.plugins.colorschemes" },
+require("lazy").setup({
+	{ import = "norestraint.plugins" },
+	{ import = "norestraint.plugins.lsp" },
+	{ import = "norestraint.plugins.colorschemes" },
+}, {
+	change_detection = {
+		notify = false,
 	},
-	{
-		change_detection = {
-			notify = false,
-		},
-		checker = {
-			enabled = true,
-			notify = false,
-		},
-	}
-)
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+})
