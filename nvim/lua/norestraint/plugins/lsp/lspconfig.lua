@@ -78,11 +78,22 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["elixirls"] = function()
-				-- configure elixir server
-				lspconfig["elixirls"].setup({
+			-- ["elixirls"] = function()
+			-- 	-- configure elixir server
+			-- 	lspconfig["elixirls"].setup({
+			-- 		capabilities = capabilities,
+			-- 		cmd = { "/home/norestraint/.elixirls/language_server.sh" },
+			-- 	})
+			-- end,
+			["lexical"] = function()
+				lspconfig["lexical"].setup({
 					capabilities = capabilities,
-					cmd = { "/home/norestraint/.elixirls/language_server.sh" },
+					cmd = { "/home/norestraint/packages/tools/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+					root_dir = function(fname)
+						return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+					end,
+					filetypes = { "elixir", "eelixir", "heex", "surface" },
+					single_file_support = true,
 				})
 			end,
 			["lua_ls"] = function()
