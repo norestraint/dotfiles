@@ -4,8 +4,8 @@ vim.g.maplocalleader = ","
 local keymap = vim.keymap
 
 -- others
-keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
-keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit file" })
+keymap.set("n", "<leader>w", ":w!<CR>", { desc = "Save file" })
+keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Exit file" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- movements
