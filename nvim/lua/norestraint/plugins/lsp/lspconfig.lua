@@ -78,22 +78,30 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			-- ["elixirls"] = function()
-			-- 	-- configure elixir server
-			-- 	lspconfig["elixirls"].setup({
-			-- 		capabilities = capabilities,
-			-- 		cmd = { "/home/norestraint/.elixirls/language_server.sh" },
-			-- 	})
-			-- end,
-			["lexical"] = function()
-				lspconfig["lexical"].setup({
-					capabilities = capabilities,
-					cmd = { "/home/norestraint/packages/tools/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-					root_dir = function(fname)
-						return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
-					end,
-					filetypes = { "elixir", "eelixir", "heex", "surface" },
+			["html"] = function()
+				-- configure html server
+				local html_capabilities = vim.lsp.protocol.make_client_capabilities()
+				capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+				lspconfig["html"].setup({
+					capabilities = html_capabilities,
+					cmd = { "vscode-html-language-server", "--stdio" },
+					filetypes = { "html", "templ", "html-eex", "heex" },
+					root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 					single_file_support = true,
+					settings = {},
+					init_options = {
+						provideFormatter = true,
+						embeddedLanguages = { css = true, javascript = true },
+						configurationSection = { "html", "css", "javascript" },
+					},
+				})
+			end,
+			["elixirls"] = function()
+				-- configure elixir server
+				lspconfig["elixirls"].setup({
+					capabilities = capabilities,
+					cmd = { "/home/norestraint/.elixirls/language_server.sh" },
 				})
 			end,
 			["lua_ls"] = function()
@@ -112,6 +120,9 @@ return {
 						},
 					},
 				})
+			end,
+			["tailwindcss"] = function()
+				lspconfig["tailwindcss"].setup({})
 			end,
 		})
 	end,
