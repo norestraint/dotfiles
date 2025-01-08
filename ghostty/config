@@ -1,0 +1,12 @@
+theme = catppuccin-mocha
+
+cursor-style = underline
+cursor-color = #fab387
+adjust-underline-thickness = 2
+
+window-decoration = false
+window-padding-x = 4
+window-padding-y = 4
+
+command = zellij
+
