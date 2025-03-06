@@ -3,6 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
+		"saghen/blink.cmp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
@@ -63,7 +64,9 @@ return {
 		})
 
 		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		-- local capabilities = cmp_nvim_lsp.default_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
@@ -79,14 +82,10 @@ return {
 				})
 			end,
 			["html"] = function()
-				-- configure html server
-				local html_capabilities = vim.lsp.protocol.make_client_capabilities()
-				capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 				lspconfig["html"].setup({
-					capabilities = html_capabilities,
+					capabilities = capabilities,
 					cmd = { "vscode-html-language-server", "--stdio" },
-					filetypes = { "html", "templ", "html-eex", "heex" },
+					filetypes = { "html", "templ", "html-eex", "heex", "html.eex" },
 					root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 					single_file_support = true,
 					settings = {},
@@ -122,7 +121,121 @@ return {
 				})
 			end,
 			["tailwindcss"] = function()
-				lspconfig["tailwindcss"].setup({})
+				lspconfig["tailwindcss"].setup({
+					capabilities = capabilities,
+					cmd = { "tailwindcss-language-server", "--stdio" },
+					settings = {
+						tailwindCSS = {
+							experimental = {
+								classRegex = {
+									'class[:]\\s*"([^"]*)"',
+								},
+							},
+							validate = true,
+							lint = {
+								cssConflict = "warning",
+								invalidApply = "error",
+								invalidScreen = "error",
+								invalidVariant = "error",
+								invalidConfigPath = "error",
+								invalidTailwindDirective = "error",
+								recommendedVariantOrder = "warning",
+							},
+							classAttributes = {
+								"class",
+								"className",
+								"class:list",
+								"classList",
+								"ngClass",
+							},
+							includeLanguages = {
+								eelixir = "html-eex",
+								eruby = "erb",
+								templ = "html",
+								htmlangular = "html",
+							},
+						},
+					},
+					init_options = {
+						userLanguages = {
+							elixir = "html-eex",
+							eelixir = "html-eex",
+							heex = "html-eex",
+						},
+					},
+					root_dir = function(fname)
+						return lspconfig.util.root_pattern(
+							"tailwind.config.js",
+							"tailwind.config.cjs",
+							"tailwind.config.mjs",
+							"tailwind.config.ts",
+							"postcss.config.js",
+							"postcss.config.cjs",
+							"postcss.config.mjs",
+							"postcss.config.ts"
+						)(fname) or vim.fs.dirname(
+							vim.fs.find("package.json", { path = fname, upward = true })[1]
+						) or vim.fs.dirname(vim.fs.find("node_modules", { path = fname, upward = true })[1]) or vim.fs.dirname(
+							vim.fs.find(".git", { path = fname, upward = true })[1]
+						)
+					end,
+					filetypes = {
+						-- html
+						"aspnetcorerazor",
+						"astro",
+						"astro-markdown",
+						"blade",
+						"clojure",
+						"django-html",
+						"htmldjango",
+						"edge",
+						"eelixir", -- vim ft
+						"elixir",
+						"ejs",
+						"erb",
+						"eruby", -- vim ft
+						"gohtml",
+						"gohtmltmpl",
+						"haml",
+						"handlebars",
+						"hbs",
+						"html",
+						"htmlangular",
+						"html-eex",
+						"heex",
+						"jade",
+						"leaf",
+						"liquid",
+						"markdown",
+						"mdx",
+						"mustache",
+						"njk",
+						"nunjucks",
+						"php",
+						"razor",
+						"slim",
+						"twig",
+						-- css
+						"css",
+						"less",
+						"postcss",
+						"sass",
+						"scss",
+						"stylus",
+						"sugarss",
+						-- js
+						"javascript",
+						"javascriptreact",
+						"reason",
+						"rescript",
+						"typescript",
+						"typescriptreact",
+						-- mixed
+						"vue",
+						"svelte",
+						"templ",
+					},
+				})
 			end,
 		})
 	end,
