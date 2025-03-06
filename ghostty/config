@@ -1,8 +1,11 @@
 theme = catppuccin-mocha
 
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+cursor-invert-fg-bg = true
 cursor-style = underline
-cursor-color = #fab387
-adjust-underline-thickness = 2
+cursor-style-blink = true
 
 window-decoration = false
 window-padding-x = 4
