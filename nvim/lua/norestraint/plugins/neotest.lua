@@ -6,6 +6,7 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"jfpedroza/neotest-elixir",
+		"nvim-neotest/neotest-python",
 	},
 	config = function()
 		local neotest = require("neotest")
@@ -13,6 +14,10 @@ return {
 
 		keymap.set("n", "<localleader>tt", function()
 			neotest.run.run()
+		end, { desc = "Run nearest test" })
+
+		keymap.set("n", "<localleader>td", function()
+			neotest.run.run({ strategy = "dap" })
 		end, { desc = "Run nearest test" })
 
 		keymap.set("n", "<localleader>tb", function()
@@ -24,6 +29,10 @@ return {
 		neotest.setup({
 			adapters = {
 				require("neotest-elixir"),
+				require("neotest-python"),
+			},
+			output = {
+				open_on_run = false,
 			},
 		})
 	end,
