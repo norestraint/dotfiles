@@ -9,13 +9,18 @@ keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Exit file" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- movements
--- keymap.set("n", "<leader><Esc>", vim.cmd.Ex, { desc = "Go to explorer" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Moves up and keeps the cursor on the middle of the screen" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Moves down and keeps the cursor on the middle of the screen" })
+
 keymap.set("i", "<C-h>", "<Left>", { desc = "Use vim keybinds as arrow keys in insert mode" })
 keymap.set("i", "<C-l>", "<Right>", { desc = "Use vim keybinds as arrow keys in insert mode" })
 keymap.set("i", "<C-k>", "<Up>", { desc = "Use vim keybinds as arrow keys in insert mode" })
 keymap.set("i", "<C-j>", "<Down>", { desc = "Use vim keybinds as arrow keys in insert mode" })
+
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to the pane on the left on normal mode" })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to the pane on the right on normal mode" })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to the pane above on normal mode" })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to the pane below on normal mode" })
 
 -- visual mode
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text up a line" })
