@@ -42,3 +42,6 @@ keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close current tab" })
 keymap.set("n", "<leader>tl", ":tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>th", ":tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>to", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+keymap.set("n", "<leader>ee", ":lua MiniFiles.open()<CR>", { desc = "Open minifiles" })
+keymap.set("n", "<leader><esc>", ":Oil<CR>", { desc = "Go back to Oil" })
