@@ -16,6 +16,7 @@ require("lazy").setup({
 	{ import = "norestraint.plugins.lsp" },
 	{ import = "norestraint.plugins.colorschemes" },
 	{ import = "norestraint.plugins.debugger" },
+	{ import = "norestraint.plugins.mini" },
 }, {
 	change_detection = {
 		notify = false,
