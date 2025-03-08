@@ -45,6 +45,7 @@ zinit snippet OMZP::command-not-found
 # autoload -U compinit && compinit
 
 export fpath=(~/.zsh/functions $fpath)
+fpath+=~/.zfunc
 
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
@@ -57,7 +58,7 @@ zinit cdreplay -q
 
 # Initialize prompt
 # eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
-	eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # Keymaps
 bindkey -e # Chech if there is a vim mode for this
@@ -138,3 +139,13 @@ export PATH=$HOME/bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/norestraint/.cache/rebar3/bin:$PATH
+
+# Created by `pipx` on 2025-02-04 18:53:45
+export PATH="$PATH:/home/norestraint/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
