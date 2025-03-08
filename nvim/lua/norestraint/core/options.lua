@@ -5,13 +5,13 @@ local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
+-- opt.cursorline = true
 opt.wrap = false
 opt.updatetime = 50
 opt.virtualedit = "block"
 
 -- cursor style
-opt.guicursor = "n:hor20,i:ver20-iCursor,v-ve:block-nCursor,a:blinkwait10-blinkon200-blinkoff2000"
+opt.guicursor = "i:ver20-iCursor,n-v-ve:block-nCursor,a:blinkwait10-blinkon200-blinkoff2000"
 opt.cursorline = true
 
 -- tabs & indentation
@@ -45,3 +45,8 @@ opt.splitbelow = true
 
 -- turn off swapfile
 opt.swapfile = false
+
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+--
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
