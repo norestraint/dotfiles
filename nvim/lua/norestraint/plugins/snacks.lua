@@ -428,14 +428,14 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>bd",
+			"<leader>c",
 			function()
 				Snacks.bufdelete()
 			end,
-			desc = "Delete Buffer",
+			desc = "Close/Delete current buffer",
 		},
 		{
-			"<leader>cR",
+			"<leader>R",
 			function()
 				Snacks.rename.rename_file()
 			end,
