@@ -64,31 +64,31 @@ return {
 
 		local keymap = vim.keymap
 
-		keymap.set("n", "<leader>db", function()
+		keymap.set("n", "<localleader>b", function()
 			dap.toggle_breakpoint()
 		end, opts("Toggle breakpoint"))
 
-		keymap.set("n", "<leader>dc", function()
+		keymap.set("n", "<localleader>c", function()
 			dap.continue()
 		end, opts("Continue/Start"))
 
-		keymap.set("n", "<leader>do", function()
+		keymap.set("n", "<localleader>o", function()
 			dap.step_over()
 		end, opts("Step over"))
 
-		keymap.set("n", "<leader>di", function()
+		keymap.set("n", "<localleader>i", function()
 			dap.step_into()
 		end, opts("Step into"))
 
-		keymap.set("n", "<leader>dO", function()
+		keymap.set("n", "<localleader>O", function()
 			dap.step_out()
 		end, opts("Step out"))
 
-		keymap.set("n", "<leader>dq", function()
+		keymap.set("n", "<localleader>q", function()
 			dap.terminate()
 		end, opts("Terminate debugging."))
 
-		keymap.set("n", "<leader>du", function()
+		keymap.set("n", "<localleader>u", function()
 			dapui.toggle()
 		end, opts("Toggle DAP UI"))
 	end,
