@@ -37,12 +37,14 @@ return {
 				"taplo",
 				"ts_ls",
 			},
+			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"beautysh",
 				"prettier",
+				"eslint",
 				"stylua",
 			},
 		})
