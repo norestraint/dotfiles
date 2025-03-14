@@ -5,6 +5,7 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
+		bufdelete = { enabled = true },
 		dashboard = { enabled = true },
 		explorer = { enabled = true },
 		indent = { enabled = true },
@@ -16,12 +17,13 @@ return {
 		picker = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		styles = {
 			notification = {
 				wo = { wrap = true },
+				relative = "editor",
 			},
 		},
 	},
@@ -80,7 +82,7 @@ return {
 		{
 			"<leader>fc",
 			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+				Snacks.picker.files({ cwd = vim.fn.stdpath("config")[0] })
 			end,
 			desc = "Find Config File",
 		},
@@ -236,14 +238,21 @@ return {
 			desc = "Commands",
 		},
 		{
-			"<leader>sd",
+			"<leader>d",
 			function()
-				Snacks.picker.diagnostics()
+				vim.diagnostic.open_float()
 			end,
-			desc = "Diagnostics",
+			desc = "Line Diagnostics",
 		},
 		{
 			"<leader>sD",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Project Diagnostics",
+		},
+		{
+			"<leader>sd",
 			function()
 				Snacks.picker.diagnostics_buffer()
 			end,
@@ -428,11 +437,22 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>c",
+			"<leader>cc",
 			function()
 				Snacks.bufdelete()
 			end,
 			desc = "Close/Delete current buffer",
+		},
+		{
+			"<leader>co",
+
+			function()
+				local filter = function(b)
+					return b ~= vim.api.nvim_get_current_buf()
+				end
+				Snacks.bufdelete(filter)
+			end,
+			desc = "Close/Delete all other buffers",
 		},
 		{
 			"<leader>R",
