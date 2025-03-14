@@ -47,6 +47,7 @@ opt.splitbelow = true
 opt.swapfile = false
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.cmdheight = 0
 --
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
