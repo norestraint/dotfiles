@@ -18,13 +18,13 @@ return {
 
 		keymap.set("n", "<localleader>td", function()
 			neotest.run.run({ strategy = "dap" })
-		end, { desc = "Run nearest test" })
+		end, { desc = "Run nearest test with debugger" })
 
 		keymap.set("n", "<localleader>tb", function()
 			neotest.run.run(vim.fn.expand("%"))
 		end, { desc = "Run tests in current file" })
 
-		keymap.set("n", "<localleader>ts", "<CMD>Neotest summary<CR>", { desc = "Run ests in current file" })
+		keymap.set("n", "<localleader>ts", "<CMD>Neotest summary<CR>", { desc = "Run tests in current file" })
 
 		neotest.setup({
 			adapters = {
