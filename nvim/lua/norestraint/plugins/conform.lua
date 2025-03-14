@@ -15,17 +15,16 @@ return {
 				javascriptreact = { "prettier" },
 				json = { "prettier" },
 				lua = { "stylua" },
-				markdown = { "prettier" },
 				rust = { "rustfmt" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },
 				python = { "ruff_format" },
 			},
-			format_on_save = {
+			format_after_save = {
 				lsp_fallback = true,
-				async = false,
-				timeout_ms = 500,
+				async = true,
+				timeout_ms = 2000,
 			},
 		})
 
