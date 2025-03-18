@@ -51,3 +51,4 @@ vim.o.cmdheight = 0
 --
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.loader.enable()
