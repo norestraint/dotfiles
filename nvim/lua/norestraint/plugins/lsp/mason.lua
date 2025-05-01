@@ -32,6 +32,7 @@ return {
 				"hyprls",
 				"jsonls",
 				"lua_ls",
+				"ruby_lsp",
 				"rust_analyzer",
 				"sqls",
 				"taplo",
@@ -45,6 +46,7 @@ return {
 				"beautysh",
 				"prettier",
 				"eslint",
+				"stylua",
 				"stylua",
 			},
 		})

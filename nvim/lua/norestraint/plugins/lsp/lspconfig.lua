@@ -51,6 +51,18 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["ruby_lsp"] = function()
+				local util = require("lspconfig.util")
+				lspconfig.ruby_lsp.setup({
+					cmd = { "ruby-lsp" },
+					filetypes = { "ruby", "eruby" },
+					root_dir = util.root_pattern("Gemfile", ".git"),
+					init_options = {
+						formatter = "auto",
+					},
+					single_file_support = true,
+				})
+			end,
 			["html"] = function()
 				lspconfig.html.setup({
 					capabilities = capabilities,
