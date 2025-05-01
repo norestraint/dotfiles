@@ -105,7 +105,8 @@ window#waybar {
 #cpu,
 #custom-exit,
 #custom-appmenu,
-#clock {
+#clock,
+#backlight {
   background: @crust;
   color: @text;
   border-radius: 1em;
