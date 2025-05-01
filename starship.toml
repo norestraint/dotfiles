@@ -11,7 +11,7 @@ read_only = " 󰌾"
 read_only_style = "bold #F38BA8"
 
 
-[character] 
+[character]
 success_symbol = "[ ](bold #A6E3A1)"
 error_symbol = "[ ](bold #F38BA8)"
 
