@@ -3,6 +3,13 @@ show_always = true
 format = "[  $user ]($style)"
 style_user = "bold #F9E2AF"
 
+[custom.git_profile]
+command = "cat ~/.git_current_profile 2>/dev/null || echo none"
+when = "test -f ~/.git_current_profile"
+style = "bright-purple"
+format = "as [$symbol($output) ]($style)"
+symbol = " "
+
 [directory]
 format = "at [$path]($style)[$read_only]($read_only_style) "
 style = "bold #89B4FA"
