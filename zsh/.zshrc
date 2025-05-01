@@ -163,3 +163,10 @@ export NVM_DIR="$HOME/.nvm"
 # unset __conda_setup
 # <<< conda initialize <<<
 
+# Source Git profile switcher
+source "$HOME/dotfiles/git_profile_switcher.zsh"
+
+# Git profile aliases
+alias gp="git_profile"
+alias gpp="git_profile switch personal"
+alias gpw="git_profile switch work"
