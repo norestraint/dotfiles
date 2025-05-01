@@ -19,7 +19,7 @@ return {
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },
-				python = { "ruff_format" },
+				python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
 			},
 			format_after_save = {
 				lsp_fallback = true,
