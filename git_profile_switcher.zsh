@@ -48,11 +48,13 @@ git_profile_switch() {
   IFS='|' read -r email name ssh_key <<< "${git_profiles[$profile]}"
   
   # Set global git config
+  eval "$(ssh-agent -s)"
+  ssh-agent -s &>/dev/null
+  ssh-add -D &>/dev/null
+  ssh-add "$ssh_key" &>/dev/null
   git config --global user.email "$email"
   git config --global user.name "$name"
   git config --global core.sshCommand "ssh -i $ssh_key -F /dev/null"
-  ssh-add -D
-  ssh-add "$ssh_key"
   
   # Save current profile
   echo "$name" > ~/.git_current_profile
