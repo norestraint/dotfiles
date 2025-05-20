@@ -94,7 +94,8 @@ alias pacu='sudo pacman -Syu'
 # Others.
 alias c='clear'
 alias ls='eza --all --icons'
-alias nv='nvim'
+alias nv='f() { dir=$(dirname "$1"); if [[ -f "$dir/pyproject.toml" ]]; then poetry run nvim "$@"; else nvim "$@"; fi; }; f'
+
 alias elixirls='$HOME/.elixirls/language_server.sh'
 
 # Set up fzf integrations
