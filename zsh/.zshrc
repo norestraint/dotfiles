@@ -95,6 +95,7 @@ alias pacu='sudo pacman -Syu'
 alias c='clear'
 alias ls='eza --all --icons'
 alias nv='f() { dir=$(dirname "$1"); if [[ -f "$dir/pyproject.toml" ]]; then poetry run nvim "$@"; else nvim "$@"; fi; }; f'
+alias lv='/home/norestraint/.local/bin/lvim'
 
 alias elixirls='$HOME/.elixirls/language_server.sh'
 
@@ -126,9 +127,7 @@ fpath+=~/.zfunc
 fpath+=~/bin
 
 . /usr/local/bin
-. "$HOME/.asdf/asdf.sh"
 . "$HOME/.cargo/env"
-. "$HOME/.asdf/plugins/golang/set-env.zsh"
 export PATH=$HOME/bin:$PATH
 
 # bun completions
@@ -149,21 +148,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/norestraint/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/norestraint/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/norestraint/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/norestraint/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
 # Source Git profile switcher
 source "$HOME/dotfiles/git_profile_switcher.zsh"
 
@@ -171,3 +155,6 @@ source "$HOME/dotfiles/git_profile_switcher.zsh"
 alias gp="git_profile"
 alias gpp="git_profile switch personal"
 alias gpw="git_profile switch work"
+
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
