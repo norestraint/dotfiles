@@ -106,7 +106,7 @@ layout {
 
         hide_frame_for_single_pane "true"
 
-        color_bg "#1e1e2e"
+        color_bg "#1F1F28"
 
         mode_normal        "#[bg=$bg,fg=#a6da95]#[bg=#a6da95,fg=$bg,bold]NORMAL#[bg=$bg,fg=#a6da95]"
         mode_locked        "#[bg=$bg,fg=#6e738d]#[bg=#6e738d,fg=$bg,bold]LOCKED #[bg=$bg,fg=#6e738d]"
