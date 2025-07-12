@@ -158,3 +158,4 @@ alias gpw="git_profile switch work"
 
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export EDITOR=nvim
