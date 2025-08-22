@@ -86,8 +86,16 @@ source "$HOME/dotfiles/remaps.sh"
 # Load pdfs with zathura.
 alias rb='zathura $(find $HOME/Documents/books | fzf --tmux) &'
 
+pacs() {
+  if [ -z "$1" ]; then
+    echo "Usage: pacs <search_term>"
+    return 1
+  fi
+
+  pacman -Ss "$@" | grep --color=auto -A 1 -E "^(community|core|extra|multilib)/.*$1.* "
+}
+
 # pacman utilities.
-alias pacs='pacman -Ss'
 alias paci='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 
