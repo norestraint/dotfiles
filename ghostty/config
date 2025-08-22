@@ -1,14 +1,14 @@
-theme = catppuccin-mocha
+theme = Kanagawa Wave
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 13
+font-size = 14
 
 cursor-invert-fg-bg = true
 cursor-style = underline
+shell-integration-features = no-cursor
 cursor-style-blink = true
 
-window-decoration = true
+window-decoration = none
 window-padding-x = 8,8
 window-padding-y = 8,0
 
-keybind=alt+shift+p=new_split
