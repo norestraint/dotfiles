@@ -1,14 +1,17 @@
 vim.cmd("let g:netrw_liststyle = 3")
 vim.cmd("set noshowmode")
+vim.cmd("set formatoptions+=w")
+vim.cmd("set tw=80")
 
 local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
--- opt.cursorline = true
 opt.wrap = false
-opt.updatetime = 50
+opt.updatetime = 300
 opt.virtualedit = "block"
+opt.scrolloff = 10
+opt.sidescrolloff = 8
 
 -- cursor style
 opt.guicursor = "i:ver20-iCursor,n-v-ve:block-nCursor,a:blinkwait10-blinkon200-blinkoff2000"

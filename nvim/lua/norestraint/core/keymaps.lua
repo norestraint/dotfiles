@@ -11,6 +11,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- movements
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Moves up and keeps the cursor on the middle of the screen" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Moves down and keeps the cursor on the middle of the screen" })
+keymap.set("n", "G", "Gzz", { desc = "Moves to end of file and keeps the cursor on the middle of the screen" })
 
 keymap.set("i", "<C-h>", "<Left>", { desc = "Use vim keybinds as arrow keys in insert mode" })
 keymap.set("i", "<C-l>", "<Right>", { desc = "Use vim keybinds as arrow keys in insert mode" })

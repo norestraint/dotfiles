@@ -4,7 +4,7 @@ return {
   dependencies = {
     "saghen/blink.cmp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    -- { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     local keymap = vim.keymap
@@ -70,15 +70,16 @@ return {
       },
     })
 
-    vim.lsp.config("elixirls", {
-      cmd = "/home/norestraint/.elixir_ls/language_server.sh",
-      capabilities = capabilities,
-    })
+    -- vim.lsp.config("elixirls", {
+    --   cmd = "/home/norestraint/.elixirls/language_server.sh",
+    --   capabilities = capabilities,
+    --   filetypes = { "elixir" }
+    -- })
 
-    vim.lsp.config("html", {
-      capabilities = capabilities,
-      filetypes = { "html", "htmx", "heex" }
-    })
+    -- vim.lsp.config("html", {
+    --   capabilities = capabilities,
+    --   filetypes = { "html", "htmx", "heex" }
+    -- })
 
     vim.lsp.config("ts_ls",
       {
@@ -86,6 +87,6 @@ return {
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
       })
 
-    vim.lsp.enable({ "lua_ls", "elixirls", "html", "ts_ls" })
+    vim.lsp.enable({ "lua_ls", "elixirls", "ts_ls" })
   end,
 }
