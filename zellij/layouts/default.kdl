@@ -91,7 +91,7 @@ layout {
   }
   default_tab_template {
     pane size=1 borderless=true {
-      plugin location="file:/home/norestraint/dotfiles/zellij/plugins/zjstatus.wasm" {
+      plugin location="file:/home/notagod/dotfiles/zellij/plugins/zjstatus.wasm" {
         format_left   "{mode}#[bg=$bg] {tabs}"
         format_center ""
         format_right  "{swap_layout}#[bg=$bg,fg=#494d64] Zellij: #[bg=$bg,fg=#494d64]{session}"
