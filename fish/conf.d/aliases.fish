@@ -1,5 +1,4 @@
 alias cd="z"
-alias ls="eza -G --icons=always"
 alias c="clear"
 
 alias pacs="pacman -Ss"

@@ -1,6 +1,8 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
-set EDITOR "nvim"
+alias ls="eza -G --icons=always"
+
+set EDITOR nvim
 
 # overwrite greeting
 # potentially disabling fastfetch
