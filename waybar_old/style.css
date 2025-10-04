@@ -1,0 +1,197 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ * (2024) Minimal Full Waybar Scroll - Catppuccin #cad3f5 - #423F3D gnome
+ * Fira Sans semibold 
+ * ----------------------------------------------------- 
+*/
+
+@define-color iconcolor #cad3f5;
+@define-color hovercolor #ed8796;
+@define-color gbcolor #24273a;
+@define-color base #1e1e2e;
+@define-color yellow #f9e2af;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color overlay0 #9399b2;
+@define-color crust #11111b;
+@define-color text #cdd6f4;
+/* -----------------------------------------------------
+ * General Styles
+ * ----------------------------------------------------- */
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-weight: bold;
+  font-size: 0.95em;
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+  background: @crust;
+  color: @text;
+  border: inset;
+  border-color: black;
+  border-radius: 1em;
+  padding: 1px 10px 0px 10px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#workspaces button {
+  color: @overlay0;
+  margin: 3px;
+  padding: 0 5px 0px 5px;
+  border: dotted;
+  background: transparent;
+  border-color: @overlay0;
+  border-width: 2px;
+  border-radius: 50px;
+}
+
+#workspaces button.visible {
+  color: @yellow;
+  border-style: solid;
+  border-color: @yellow;
+}
+
+#workspaces button.active {
+  color: @crust;
+  background-color: @yellow;
+  border-style: solid;
+  border-color: @yellow;
+}
+
+#workspaces button.urgent {
+  color: @red;
+  border-style: solid;
+  border-color: @red;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Change @hovercolor, @bgcolor, & @iconcolor
+ * ----------------------------------------------------- */
+
+#network.wifi,
+#pulseaudio,
+#memory,
+#battery,
+#cpu,
+#custom-exit,
+#custom-appmenu,
+#clock,
+#backlight {
+  background: @crust;
+  color: @text;
+  border-radius: 1em;
+  margin: 0.5em;
+  padding: 0.25em 0.5em;
+}
+
+#network.wifi:hover,
+#battery:hover,
+#clock:hover,
+#custom-exit:hover,
+#cpu:hover,
+#memory:hover {
+  background: @crust;
+  color: @yellow;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+#custom-exit {
+  background-color: @gbcolor;
+  color: @iconcolor;
+  padding-right: 16px;
+  margin-right: 0.75em;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio Volume
+ * ----------------------------------------------------- */
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+/* -----------------------------------------------------
+ * Network & Disconnected
+ * ----------------------------------------------------- */
+
+#network.disconnected {
+  background-color: @crust;
+  color: @color;
+}
+
+/* -----------------------------------------------------
+ * Tooltips & Calendar
+ * ----------------------------------------------------- */
+
+tooltip {
+  border-radius: 10px;
+  background-color: #181926;
+}
+
+tooltip label {
+  color: @iconcolor;
+  margin: 10px;
+}
+
+#custom-notification {
+  background: @crust;
+  color: @text;
+  border-radius: 1em;
+  margin: 0.5em;
+  padding: 0.25em 0.5em;
+}
+
+#backlight-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough {
+  min-height: 0.2em;
+  min-width: 0.5em;
+  border-radius: 1em;
+  background-color: black;
+}
+
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 1em;
+  background-color: red;
+}

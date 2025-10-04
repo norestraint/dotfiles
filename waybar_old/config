@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "position": "top",
+    "output": ["eDP-1", "HDMI-A-1", "DVI-I-1"],
+
+    "spacing": 4,
+     
+    // Load Modules
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],    
+    "modules-left": [
+        "battery",
+        "network", 
+        "pulseaudio",
+        "backlight"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "cpu", 
+        "memory", 
+        "clock",
+        "custom/notification"
+    ]
+}
