@@ -1,2 +1,1 @@
 require("notagod.core")
-require("notagod.lazy")

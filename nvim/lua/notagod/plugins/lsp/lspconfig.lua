@@ -70,17 +70,6 @@ return {
       },
     })
 
-    -- vim.lsp.config("elixirls", {
-    --   cmd = "/home/norestraint/.elixirls/language_server.sh",
-    --   capabilities = capabilities,
-    --   filetypes = { "elixir" }
-    -- })
-
-    -- vim.lsp.config("html", {
-    --   capabilities = capabilities,
-    --   filetypes = { "html", "htmx", "heex" }
-    -- })
-
     vim.lsp.config("ts_ls",
       {
         capabilities = capabilities,
