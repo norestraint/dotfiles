@@ -27,3 +27,8 @@ set --erase _asdf_shims
 starship init fish | source
 
 zoxide init fish | source
+
+fish_add_path -g "$HOME/bin"
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish

@@ -45,7 +45,7 @@ themes {
   }
 
   catppuccin-mocha {
-    bg "#585b70" // Surface2
+    bg "#1e1e2e" // Surface2
     fg "#cdd6f4"
     red "#f38ba8"
     green "#a6e3a1"

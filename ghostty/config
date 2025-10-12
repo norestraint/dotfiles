@@ -1,7 +1,8 @@
-theme = Kanagawa Wave
+theme = Catppuccin Mocha
 
-font-family = "JetBrainsMono Nerd Font"
-font-size = 16
+window-inherit-font-size = false
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 20
 
 cursor-invert-fg-bg = true
 cursor-style = underline
