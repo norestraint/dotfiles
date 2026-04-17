@@ -19,6 +19,7 @@ ignored_folders=(
   ".logseq"
   ".mozilla"
   "miniconda3"
+  ".vscode"
 )
 
 # Start building the find command with prune expressions
