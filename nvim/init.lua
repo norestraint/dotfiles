@@ -1,2 +1,2 @@
-require("notagod.core")
-require("notagod.lazy")
+require("config")
+require("config.lazy")

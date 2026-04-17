@@ -1,5 +1,5 @@
-require("notagod.core.options")
-require("notagod.core.keymaps")
+require("norestraint.core.options")
+require("norestraint.core.keymaps")
 
 -- Highlight yanked
 vim.cmd([[

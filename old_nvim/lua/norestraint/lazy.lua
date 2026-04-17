@@ -12,11 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "notagod.plugins" },
-  { import = "notagod.plugins.lsp" },
-  { import = "notagod.plugins.colorschemes" },
-  { import = "notagod.plugins.debugger" },
-  { import = "notagod.plugins.mini" },
+  { import = "norestraint.plugins" },
+  { import = "norestraint.plugins.lsp" },
+  { import = "norestraint.plugins.colorschemes" },
+  { import = "norestraint.plugins.debugger" },
 }, {
   change_detection = {
     notify = false,

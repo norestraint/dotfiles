@@ -17,7 +17,10 @@ return {
 		},
 		picker = { enabled = true },
 		quickfile = { enabled = true },
-		scope = { enabled = true },
+		scope = {
+			min_size = 2,
+			max_size = 2,
+		},
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },

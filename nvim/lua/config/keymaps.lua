@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = ","
 
 local keymap = vim.keymap
 
@@ -7,6 +7,7 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>w", ":w!<CR>", { desc = "Save file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Exit file" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>fo", "gggqG", { desc = "Format file" })
 
 -- movements
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Moves up and keeps the cursor on the middle of the screen" })
@@ -44,5 +45,7 @@ keymap.set("n", "<leader>tl", ":tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>th", ":tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>to", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
-keymap.set("n", "<leader>ee", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", { desc = "Open minifiles" })
+-- keymap.set("n", "<leader>ee", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", { desc = "Open minifiles" })
 keymap.set("n", "<leader><esc>", ":Oil<CR>", { desc = "Go back to Oil" })
+
+return {}
