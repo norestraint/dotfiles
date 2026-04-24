@@ -1,0 +1,15 @@
+themes {
+    ristretto {
+        fg 230 217 219
+        bg 44 37 37
+        black 114 105 106
+        red 253 104 131
+        green 173 218 120
+        yellow 249 204 108
+        blue 243 141 112
+        magenta 168 169 235
+        cyan 133 218 204
+        white 230 217 219
+        orange 195 183 184
+    }
+}

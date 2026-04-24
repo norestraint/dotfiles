@@ -1,0 +1,15 @@
+themes {
+    miasma {
+        fg 194 194 176
+        bg 34 34 34
+        black 0 0 0
+        red 104 87 66
+        green 95 135 95
+        yellow 179 109 67
+        blue 120 130 75
+        magenta 187 119 68
+        cyan 201 165 84
+        white 215 196 131
+        orange 199 199 199
+    }
+}
