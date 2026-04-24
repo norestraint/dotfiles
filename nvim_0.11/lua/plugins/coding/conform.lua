@@ -23,6 +23,7 @@ return {
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },
 				python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
+				kdl = { "kdlfmt" },
 			},
 			format_after_save = {
 				lsp_fallback = true,

@@ -25,8 +25,6 @@ vim.g.maplocalleader = ","
 require("lazy").setup({
 	spec = {
 		-- import your plugins
-		{ import = "config.keymaps" },
-		{ import = "config.options" },
 		{ import = "plugins" },
 		{ import = "plugins.colorschemes" },
 		{ import = "plugins.ui" },

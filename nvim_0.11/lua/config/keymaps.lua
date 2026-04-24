@@ -1,5 +1,5 @@
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 local keymap = vim.keymap
 
@@ -28,9 +28,21 @@ keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to the pane below on normal mo
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text up a line" })
 keymap.set("v", "K", ":m '>+1<CR>gv=gv", { desc = "Move selected text down a line" })
 
+keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
+keymap.set("v", "x", '"_d', { desc = "Delete without yanking" })
+
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
+
+-- buffers management
+keymap.set("n", "L", "<CMD>bnext<CR>", { desc = "Next buffer" })
+keymap.set("n", "H", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>bc", "<CMD>bdelete<CR>", { desc = "Closes current buffer" })
+keymap.set("n", "<leader>bo", "<CMD>%bdelete|e#<CR>", { desc = "Closes other buffers" })
 
 -- panes management
 keymap.set("n", "<leader>pv", "<C-w>v", { desc = "Split window vertically" })
@@ -45,7 +57,6 @@ keymap.set("n", "<leader>tl", ":tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>th", ":tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>to", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
--- keymap.set("n", "<leader>ee", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", { desc = "Open minifiles" })
 keymap.set("n", "<leader><esc>", ":Oil<CR>", { desc = "Go back to Oil" })
 
 return {}

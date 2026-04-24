@@ -1,0 +1,6 @@
+require("config.options")
+require("config.statusline")
+require("config.keymaps")
+require("config.cmdline")
+require("config.tabline")
+require("config.autocmds")
