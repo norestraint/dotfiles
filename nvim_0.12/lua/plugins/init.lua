@@ -3,7 +3,7 @@ require("plugins.mini_setup")
 vim.pack.add({
 	-- Colorschemes
 	"https://github.com/tanvirtin/monokai.nvim",
-  "https://github.com/xero/miasma.nvim",
+	"https://github.com/xero/miasma.nvim",
 	{
 		src = "https://github.com/nvim-treesitter/nvim-treesitter",
 		branch = "main",
@@ -23,6 +23,11 @@ vim.pack.add({
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://www.github.com/lewis6991/gitsigns.nvim",
+	"https://www.github.com/nvim-neotest/neotest",
+	"https://www.github.com/nvim-neotest/nvim-nio",
+	"https://www.github.com/nvim-lua/plenary.nvim",
+	"https://www.github.com/antoinemadec/FixCursorHold.nvim",
+	"https://www.github.com/jfpedroza/neotest-elixir",
 })
 
 local function packadd(plugin)
@@ -59,3 +64,10 @@ require("plugins.conform-config")
 
 packadd("gitsigns.nvim")
 require("plugins.gitsigns-config")
+
+packadd("neotest")
+packadd("nvim-nio")
+packadd("plenary.nvim")
+packadd("FixCursorHold.nvim")
+packadd("neotest-elixir")
+require("plugins.neotest-config")

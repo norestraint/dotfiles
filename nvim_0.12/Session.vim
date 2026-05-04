@@ -10,13 +10,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +3 lua/plugins/conform-config.lua
-badd +51 lua/config/tabline.lua
-badd +70 lua/config/statusline.lua
-badd +18 lua/config/options.lua
+badd +170 lua/config/tabline.lua
 argglobal
 %argdel
-$argadd .
+$argadd ./
 edit lua/config/tabline.lua
 wincmd t
 let s:save_winminheight = &winminheight
@@ -26,8 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt lua/config/statusline.lua
-setlocal foldmethod=expr
+setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
@@ -35,50 +31,48 @@ setlocal foldlevel=99
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
-45
+silent! normal! zE
+sil! 10,16fold
+sil! 20,22fold
+sil! 18,23fold
+sil! 25,31fold
+sil! 36,38fold
+sil! 34,42fold
+sil! 46,48fold
+sil! 45,60fold
+sil! 64,66fold
+sil! 67,69fold
+sil! 78,85fold
+sil! 87,92fold
+sil! 77,93fold
+sil! 63,94fold
+sil! 100,102fold
+sil! 108,110fold
+sil! 106,111fold
+sil! 113,117fold
+sil! 96,125fold
+sil! 131,134fold
+sil! 127,138fold
+sil! 144,146fold
+sil! 143,147fold
+sil! 141,148fold
+sil! 155,157fold
+sil! 153,158fold
+sil! 150,159fold
+sil! 166,168fold
+sil! 164,169fold
+sil! 161,170fold
+let &fdl = &fdl
+161
 sil! normal! zo
-62
+164
 sil! normal! zo
-76
-sil! normal! zo
-95
-sil! normal! zo
-105
-sil! normal! zo
-126
-sil! normal! zo
-140
-sil! normal! zo
-142
-sil! normal! zo
-149
-sil! normal! zo
-152
-sil! normal! zo
-62
-sil! normal! zo
-76
-sil! normal! zo
-95
-sil! normal! zo
-105
-sil! normal! zo
-126
-sil! normal! zo
-140
-sil! normal! zo
-142
-sil! normal! zo
-149
-sil! normal! zo
-152
-sil! normal! zo
-let s:l = 51 - ((10 * winheight(0) + 14) / 28)
+let s:l = 170 - ((17 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 51
-normal! 010|
+keepjumps 170
+normal! 031|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

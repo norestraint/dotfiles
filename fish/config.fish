@@ -1,5 +1,3 @@
-alias ls="eza -G --icons=always"
-
 set EDITOR nvim
 
 starship init fish | source

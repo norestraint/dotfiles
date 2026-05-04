@@ -1,5 +1,5 @@
 function gd --description "Go to directory with fuzzy finder"
-    set -l ignore_patterns ".git" node_modules ".cache" __pycache__ ".venv"
+    set -l ignore_patterns ".local" ".git" node_modules ".cache" __pycache__ ".venv"
 
     set -l find_args $HOME -type d
 

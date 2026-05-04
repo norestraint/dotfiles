@@ -1,6 +1,6 @@
 local M = {}
 
-local SEP = "" -- separator glyph at buffer boundary
+local SEP = "|" -- separator glyph at buffer boundary
 local CLOSE = "" -- close icon shown on active buffer
 local NO_NAME = "[NO NAME]"
 
@@ -46,15 +46,17 @@ local function get_display_name(path)
 	if path == "" then
 		return NO_NAME
 	end
-	local parts = vim.split(path, "/", { plain = true })
-	if #parts == 1 then
-		return parts[1] -- Just filename if no parent
-	elseif #parts == 2 then
-		return parts[#parts - 1] .. "/" .. parts[#parts] -- parent/filename
-	else
-		-- Return "grandparent/parent/filename" (last 3 parts)
-		return parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
-	end
+	local parts = vim.split(path, "/")
+	return parts[#parts]
+	-- local parts = vim.split(path, "/", { plain = true })
+	-- if #parts == 1 then
+	-- 	return parts[1] -- Just filename if no parent
+	-- elseif #parts == 2 then
+	-- 	return parts[#parts - 1] .. "/" .. parts[#parts] -- parent/filename
+	-- else
+	-- 	-- Return "grandparent/parent/filename" (last 3 parts)
+	-- 	return parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
+	-- end
 end
 
 -- Render a single buffer chunk
@@ -155,6 +157,17 @@ vim.keymap.set("n", "<leader>br", function()
 		end
 	end
 end, { desc = "Close all right buffers" })
+
+vim.keymap.set("n", "<leader>bo", function()
+	local cur = vim.api.nvim_get_current_buf()
+	local bufs = vim.api.nvim_list_bufs()
+	for i = #bufs, 1, -1 do
+		local buf = bufs[i]
+		if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted and buf ~= cur then
+			pcall(vim.api.nvim_buf_delete, buf, { force = true })
+		end
+	end
+end, { desc = "Close all other buffers" })
 
 M.setup()
 

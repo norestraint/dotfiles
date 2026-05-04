@@ -60,14 +60,17 @@ local function lsp_on_attach(ev)
 	end, opts)
 
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 	vim.keymap.set("n", "<leader>D", function()
 		vim.diagnostic.open_float({ scope = "line" })
 	end, opts)
+
 	vim.keymap.set("n", "<leader>d", function()
 		vim.diagnostic.open_float({ scope = "cursor" })
 	end, opts)
+
 	vim.keymap.set("n", "<leader>nd", function()
 		vim.diagnostic.jump({ count = 1 })
 	end, opts)
@@ -81,18 +84,23 @@ local function lsp_on_attach(ev)
 	vim.keymap.set("n", "<leader>fd", function()
 		require("fzf-lua").lsp_definitions({ jump_to_single_result = true })
 	end, opts)
+
 	vim.keymap.set("n", "<leader>fr", function()
 		require("fzf-lua").lsp_references()
 	end, opts)
+
 	vim.keymap.set("n", "<leader>ft", function()
 		require("fzf-lua").lsp_typedefs()
 	end, opts)
+
 	vim.keymap.set("n", "<leader>fs", function()
 		require("fzf-lua").lsp_document_symbols()
 	end, opts)
+
 	vim.keymap.set("n", "<leader>fw", function()
 		require("fzf-lua").lsp_workspace_symbols()
 	end, opts)
+
 	vim.keymap.set("n", "<leader>fi", function()
 		require("fzf-lua").lsp_implementations()
 	end, opts)
@@ -118,6 +126,8 @@ vim.keymap.set("n", "<leader>Q", function()
 end, { desc = "Open diagnostic list" })
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 
+-- ─── LSP ──────────────────────────────────────────────────────────────────────
+
 vim.lsp.config["*"] = {
 	capabilities = require("blink.cmp").get_lsp_capabilities(),
 }
@@ -131,12 +141,29 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.enable({
-	"lua_ls",
-	"elixirls",
-	"pyright",
-	"bashls",
-	"ts_ls",
-	"gopls",
-	"clangd",
-})
+local ft_servers = {
+	lua = { "lua_ls" },
+	elixir = { "elixirls" },
+	heex = { "elixirls" },
+	python = { "pyright" },
+	sh = { "bashls" },
+	bash = { "bashls" },
+	javascript = { "ts_ls" },
+	typescript = { "ts_ls" },
+	javascriptreact = { "ts_ls" },
+	typescriptreact = { "ts_ls" },
+	go = { "gopls" },
+	c = { "clangd" },
+	cpp = { "clangd" },
+}
+
+for ft, servers in pairs(ft_servers) do
+	vim.api.nvim_create_autocmd("FileType", {
+		group = augroup,
+		pattern = ft,
+		once = false,
+		callback = function()
+			vim.lsp.enable(servers)
+		end,
+	})
+end

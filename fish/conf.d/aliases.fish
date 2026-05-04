@@ -5,3 +5,5 @@ alias pacs="pacman -Ss"
 alias paci="sudo pacman -S"
 
 alias nv="nvim"
+
+alias ls="eza --binary --icons=always --git"

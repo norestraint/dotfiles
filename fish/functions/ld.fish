@@ -1,6 +1,6 @@
 function ld --description "Load directory in editor with fuzzy finder"
     # List of patterns to ignore (add more as needed)
-    set -l ignore_patterns ".git" node_modules ".cache" __pycache__ ".venv" ".cargo" ".asdf"
+    set -l ignore_patterns ".local" ".git" node_modules ".cache" __pycache__ ".venv" ".cargo" ".asdf"
 
     # Build find arguments as a proper list (no eval needed)
     set -l find_args $HOME -type d

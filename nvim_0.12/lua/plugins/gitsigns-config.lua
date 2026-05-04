@@ -25,7 +25,7 @@ gitsigns.setup({
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol",
-		delay = 800,
+		delay = 8000,
 		ignore_whitespace = false,
 		virt_text_priority = 100,
 		use_focus = true,
