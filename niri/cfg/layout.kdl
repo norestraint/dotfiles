@@ -11,4 +11,17 @@
         }
 
         struts {}
+
+        focus-ring {
+          on
+          width 3
+          active-color "#f38d70"
+          inactive-color "#5B5353"
+          urgent-color "#fd6883"
+        }
+
+        shadow {
+          on
+          spread 5
+        }
     }
