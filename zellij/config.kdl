@@ -508,6 +508,7 @@ plugins {
         welcome_screen true
     }
 }
+
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
@@ -520,12 +521,11 @@ ui {
         hide_session_name true
     }
 }
+
 // default_layout "compact"
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "miasma"
+theme "ristretto"
 pane_frames false
 show_startup_tips false
-default_shell "fish"
-
