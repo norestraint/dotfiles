@@ -22,7 +22,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		border = "rounded",
-		source = "always",
+		source = true,
 		header = "",
 		prefix = "",
 		focusable = false,
@@ -135,7 +135,7 @@ vim.lsp.config["*"] = {
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
-			diagnostics = { globals = { "vim" } },
+			diagnostics = { globals = { "vim", "Snacks" } },
 			telemetry = { enable = false },
 		},
 	},

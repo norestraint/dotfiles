@@ -9,7 +9,12 @@ keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Exit file" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>fo", "gggqG", { desc = "Format file" })
 keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
-keymap.set("n", "<leader>cR", "<CMD>mksession! Session.vim | restart source Session.vim<CR>", { desc = "Restart config(keeps state)" })
+keymap.set(
+	"n",
+	"<leader>cR",
+	"<CMD>mksession! Session.vim | restart source Session.vim<CR>",
+	{ desc = "Restart config(keeps state)" }
+)
 
 keymap.set("n", "<leader><esc>", "<CMD>Ex<CR>", { desc = "Go back to filetree" })
 
