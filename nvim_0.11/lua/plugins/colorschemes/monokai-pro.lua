@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		-- require("monokai-pro").setup()
-		-- vim.cmd.colorscheme("monokai-pro-ristretto")
+		require("monokai-pro").setup()
+		vim.cmd.colorscheme("monokai-pro-ristretto")
 	end,
 }

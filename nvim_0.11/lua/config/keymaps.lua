@@ -3,13 +3,36 @@ vim.g.maplocalleader = ","
 
 local keymap = vim.keymap
 
+-- folds
+keymap.set("n", "fo", ":foldopen<CR>", { desc = "Open fold" })
+keymap.set("n", "fc", ":foldclose<CR>", { desc = "Close fold" })
+
 -- others
 keymap.set("n", "<leader>w", ":w!<CR>", { desc = "Save file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Exit file" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>fo", "gggqG", { desc = "Format file" })
 
+keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
+keymap.set(
+	"n",
+	"<leader>cR",
+	"<CMD>mksession! Session.vim | restart source Session.vim<CR>",
+	{ desc = "Restart config(keeps state)" }
+)
+keymap.set("n", "<leader><esc>", "<CMD>Ex<CR>", { desc = "Go back to filetree" })
+
 -- movements
+keymap.set("n", "j", function()
+	return vim.v.count == 0 and "gj" or "j"
+end, { expr = true, silent = true, desc = "Down (wrap-aware)" })
+keymap.set("n", "k", function()
+	return vim.v.count == 0 and "gk" or "k"
+end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
+
+keymap.set("n", "n", "nzzzv", { desc = "Centers mouse after going to next search result" })
+keymap.set("n", "N", "Nzzzv", { desc = "Centers mouse after going to previous search result" })
+
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Moves up and keeps the cursor on the middle of the screen" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Moves down and keeps the cursor on the middle of the screen" })
 keymap.set("n", "G", "Gzz", { desc = "Moves to end of file and keeps the cursor on the middle of the screen" })
@@ -35,8 +58,8 @@ keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
+-- keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
+-- keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- buffers management
 keymap.set("n", "L", "<CMD>bnext<CR>", { desc = "Next buffer" })

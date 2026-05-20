@@ -25,9 +25,11 @@ return {
 					text = "Neo-tree",
 					highlight = "Directory",
 					text_align = "left",
+					separator = false,
 				},
 				{
 					filetype = "snacks_layout_box",
+					separator = false,
 				},
 			},
 		},

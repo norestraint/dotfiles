@@ -50,7 +50,16 @@ return {
 					})
 				end,
 				settings = {
-					Lua = {},
+					Lua = {
+						diagnostics = { globals = { "vim", "Snacks" } },
+						telemetry = { enable = false },
+					},
+				},
+			},
+			html = {
+				filetypes = {
+					"html",
+					"heex",
 				},
 			},
 			ts_ls = {
@@ -100,11 +109,41 @@ return {
 			end,
 		})
 
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		local diagnostic_signs = {
+			Error = " ",
+			Warn = " ",
+			Hint = " ",
+			Info = " ",
+		}
+
+		vim.diagnostic.config({
+			virtual_text = { prefix = "●", spacing = 4 },
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = diagnostic_signs.Error,
+					[vim.diagnostic.severity.WARN] = diagnostic_signs.Warn,
+					[vim.diagnostic.severity.INFO] = diagnostic_signs.Info,
+					[vim.diagnostic.severity.HINT] = diagnostic_signs.Hint,
+				},
+			},
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
+			float = {
+				border = "rounded",
+				source = true,
+				header = "",
+				prefix = "",
+				focusable = false,
+				style = "minimal",
+			},
+		})
+		-- DEPRECATED on 0.12
+		-- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		-- for type, icon in pairs(signs) do
+		-- 	local hl = "DiagnosticSign" .. type
+		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		-- end
 
 		-- inlay hints
 		if opts.inlay_hint and opts.inlay_hints.enabled then
@@ -216,6 +255,6 @@ return {
 			vim.lsp.config(server, config)
 		end
 		--
-		vim.lsp.enable({ "elixirls", "lua_ls", "ts_ls" })
+		vim.lsp.enable({ "elixirls", "lua_ls", "ts_ls", "clangd", "html" })
 	end,
 }

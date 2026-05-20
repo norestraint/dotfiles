@@ -18,8 +18,8 @@ return {
 		picker = { enabled = true },
 		quickfile = { enabled = true },
 		scope = {
-			min_size = 2,
-			max_size = 2,
+			min_size = 1,
+			max_size = 1,
 		},
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
@@ -62,7 +62,7 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>n",
+			"<leader>no",
 			function()
 				Snacks.picker.notifications()
 			end,
@@ -548,6 +548,8 @@ return {
 					Snacks.debug.backtrace()
 				end
 				vim.print = _G.dd -- Override print to use snacks for `:=` command
+
+				vim.api.nvim_set_hl(0, "SnacksPicker", { link = "GruvboxBg0" })
 
 				-- Create some toggle mappings
 				Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
