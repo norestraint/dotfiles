@@ -97,7 +97,7 @@ vim.opt.autowrite = false -- Disables auto-save
 
 -- Folding settings
 vim.opt.smoothscroll = true
--- vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = "indent"
 -- vim.opt.foldmethod = "expr" -- Sets expression for folding
 -- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Sets treesitter for folding
 vim.opt.foldlevel = 99 -- Start with all folds open

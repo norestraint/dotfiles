@@ -95,7 +95,7 @@ return {
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
 				opts.desc = "Restart LSP"
-				keymap.set("n", "<leader>lr", ":LspRestart<CR>", opts)
+				keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts)
 
 				opts.desc = "Lsp Info"
 				keymap.set("n", "<leader>li", function()
@@ -255,6 +255,14 @@ return {
 			vim.lsp.config(server, config)
 		end
 		--
-		vim.lsp.enable({ "elixirls", "lua_ls", "ts_ls", "clangd", "html" })
+		vim.lsp.enable({
+			"roslyn",
+			"elixirls",
+			"lua_ls",
+			"ts_ls",
+			"clangd",
+			"html",
+			"pyright",
+		})
 	end,
 }
